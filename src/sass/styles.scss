@@ -1,70 +1,29 @@
 @import "colors";
-@import "fonts";
-@import "debug/debug-styles";
-@import "utility";
-@import "ui/ui-styles";
+
+$main-font: verdana, sans-serif;
 
 body {
     font: $main-font;
     margin: 0;
     background-color: $color-light;
-    overflow-y: hidden;
     h1,
     h2 {
         color: $color-dark;
     }
 }
 
-#idCategoryPane {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    margin-left: 0;
-    margin-right: auto;
-    max-width: 300px;
-    min-width: 150px;
-    button {
-        margin: 3px 8px;
-        min-height: 40px;
-        cursor: pointer;
-    }
-}
-
-#idBlingPaneContainer {
-    max-width: 300px;
-    min-width: 150px;
-}
-
-.category {
+.website-class {
     background-color: #228888;
     color: #99FFF0;
     font-size: 20px;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
-.bling-pane-title {
+.button-class {
+    background-color: #222288;
     color: #FF00FF;
     font-size: 20px;
-}
-
-.bling-pane {
-    margin-left: 0;
-    margin-right: auto;
-    max-width: 300px;
-    min-width: 150px;
-}
-
-.label-widget {
-    color: #FFFF00;
-}
-
-.label-widget-alternative {
-    color: #399F88;
-}
-
-.button-widget {
-    background-color: #f43f56;
-    border: none;
     display: inline-block;
     cursor: pointer;
 }

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import IStoreModel from "../Redux/IStoreModel";
+import CSS from "@Sass/styles.scss";
 
 interface IWebsiteProps {
     model: IStoreModel;
@@ -10,16 +11,18 @@ export class WebsiteComponent extends React.Component<IWebsiteProps> {
     public static buttonText: string = "[Button Text]";
     public render() {
         return (
-            <div className="websiteClass">
-                { this._getButton() }
+            <div className={ CSS.websiteClass }>
+                { this._getButton(1) }
+                { this._getButton(2) }
+                { this._getButton(3) }
             </div>
         );
     }
 
-    private _getButton(): JSX.Element {
+    private _getButton(num: number): JSX.Element {
         return (
-            <button className="buttonClass" onClick={ this._onClick }>
-                { WebsiteComponent.buttonText }
+            <button className={ CSS.buttonClass } onClick={ this._onClick }>
+                { WebsiteComponent.buttonText + num }
             </button>
         );
     }

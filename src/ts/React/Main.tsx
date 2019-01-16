@@ -4,6 +4,7 @@ import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "@Redux/ReduxStore";
 import { Website } from "@React/Website";
+import "@Sass/styles"; // Pull in the CSS
 
 createStore()
     .then(store => {
