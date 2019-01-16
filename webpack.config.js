@@ -77,10 +77,10 @@ module.exports = (env, argv) => {
             host: webpackDevServerIP,
             port: webpackDevServerPort,
             hot: true,
-            // open: true,
-            // openPage: "devClientIndex.html",
+            open: true,
+            openPage: "index.html",
             inline: true,
-            // https: shouldUseHTTPS
+            https: false
         },
 
         // watchOptions: {
