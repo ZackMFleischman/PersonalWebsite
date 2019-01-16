@@ -1,0 +1,99 @@
+sectionsToRender:
+  - about
+  - work
+  - projects
+  - skills
+  - connect
+
+sections:
+  about:
+    id: about
+    menuTitle: About
+    greeting: "Hey, I'm"
+    title: "Zack M Fleischman"
+    subtitle: "I build software."
+    backgroundImage: headshot.png
+
+  work:
+    id: work
+    menuTitle: Work
+    title: "What I’ve built professionally"
+    jobs:
+      - company: Strypes
+        product: "3D Fashion Configurator"
+        title: "Cofounder and CTO"
+        description: "Strypes was a thing."
+        imageUrl: strypesImage.png
+
+      - company: Microsoft
+        product: XBox
+        title: "Software Engineer"
+        description: "XBox 360, Xbox One, and Kinect. Rapid prototyping blah blah blah"
+        imageUrl: microsoft.png
+
+  projects:
+    id: projects
+    menuTitle: Projects
+    title: "What I've built for fun"
+    projects:
+      - title: Mandelbrot Set Zoomer
+        description: Zoom in on the Mandelbrot Set
+        imageUrl: mandelbrot.gif
+        sourceCodeUrl: mandelbrot.html
+
+      - title: Circle Magic
+        description: Wooooaahhhh circles!
+        imageUrl: circles.gif
+        sourceCodeUrl: circles.html
+
+  skills: 
+    id: skills
+    menuTitle: Skills
+    title: "My Skillset"
+    skillGroups:
+      - title: "High Level Skills"
+        skills:
+          - skillName: "Software Architecture"
+          - skillName: "Game Development"
+          - skillName: "Web Development"
+          - skillName: "Engineering Management"
+          - skillName: "Business Development"
+          - skillName: "Tooling and Automation"
+          - skillName: "DevOps"
+      - title: "Languages"
+        skills:
+          - skillName: "C#"
+          - skillName: "Typescript/Javascript"
+          - skillName: ""
+          - skillName: "HTML/CSS/SASS"
+          - skillName: "Python"
+          - skillName: "Bash"
+          - skillName: "Processing"
+      - title: "Frameworks and Services"
+        skills:
+          - skillName: "Unity 3D"
+          - skillName: "React/Redux"
+          - skillName: "AWS"
+          - skillName: "BabylonJS"
+          - skillName: "Click"
+
+  connect:
+    id: connect
+    hireMe:
+      - linkedIn
+    followMe: 
+      - twitter
+    emailMe: ZackMFleischman@gmail.com
+
+socialMedia:
+  twitter: 
+    id: twitter
+    label: Twitter
+    url: twitter.com/ZackMFleischman
+    icon: twitterIcon.png
+
+  linkedIn: 
+    id: linkedIn
+    label: LinkedIn
+    url: linkedIn.com/ZackMFleischman
+    icon: linkedInIcon.png
