@@ -68,7 +68,7 @@ interface IConnectSection extends ISection {
     emailMe: string; // ZackMFleischman@gmail.com
 }
 
-interface IStoreModel {
+export default interface IStoreModel {
     sectionsToRender: string[];
     sections: ISectionMap;
     socialMedia: ISocialMediaMap;
