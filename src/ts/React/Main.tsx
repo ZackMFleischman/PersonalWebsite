@@ -1,4 +1,4 @@
-// import CSS from "@Sass/styles.scss";
+import CSS from "@Sass/styles.scss";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
@@ -12,6 +12,6 @@ createStore()
             <Provider store={ store } >
                 <Website />
             </Provider>,
-            document.getElementById("idMain")
+            document.getElementById(CSS.idMain)
         );
     });

@@ -2,6 +2,10 @@
 
 $main-font: verdana, sans-serif;
 
+#idMain {
+    background-color: $color-light;
+}
+
 body {
     font: $main-font;
     margin: 0;
