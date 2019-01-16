@@ -1,6 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import IStoreModel from "../Redux/IStoreModel";
+import IStoreModel from "../Redux/IModels";
 import CSS from "@Sass/styles.scss";
 
 interface IWebsiteProps {
