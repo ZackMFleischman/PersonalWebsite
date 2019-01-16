@@ -1,9 +1,5 @@
 node_modules/
 dist/
+www/
 .vscode/
-dependency_graph_for_tests.svg
-dependency_graph_for_src.svg
 .bundle-analyzer-stats.json
-.nyc_output/
-coverage/
-mochawesome-report/

@@ -6,9 +6,6 @@
             "dom"
         ],
         "types": [ // Type declaration files to be included in compilation.
-            "babylonjs",
-            "fast-deep-equal",
-            "babylonjs-loaders",
             "reflect-metadata",
             "node"
         ],
@@ -20,104 +17,20 @@
         "emitDecoratorMetadata": true,
         "jsx": "react", // Specify JSX code generation: 'preserve', 'react-native', or 'react'.
         "paths": { // A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
-            "@Constants": [
-                "./src/ts/Constants"
-            ],
             "@Sass/*": [
                 "./src/sass/*"
-            ],
-            "@WebtoolStarter/*": [
-                "./src/ts/WebtoolStarter/*"
-            ],
-            "@WebtoolEmbedder/*": [
-                "./src/ts/WebtoolEmbedder/*"
-            ],
-            "@Logging/*": [
-                "./src/ts/Logging/*"
-            ],
-            "@ModelLayer/*": [
-                "./src/ts/ModelLayer/*"
-            ],
-            "@Scenes/*": [
-                "./src/ts/Scenes/*"
-            ],
-            "@Startup/*": [
-                "./src/ts/Startup/*"
-            ],
-            "@RenderLoop/*": [
-                "./src/ts/RenderLoop/*"
-            ],
-            "@Utility/*": [
-                "./src/ts/Utility/*"
-            ],
-            "@Systems/*": [
-                "./src/ts/Systems/*"
-            ],
-            "@Events/*": [
-                "./src/ts/ModelLayer/Events/*"
-            ],
-            "@Views/*": [
-                "./src/ts/Views/*"
-            ],
-            "@Requests/*": [
-                "./src/ts/Requests/*"
-            ],
-            "@Inversify/*": [
-                "./src/ts/Inversify/*"
-            ],
-            "@Serialization/*": [
-                "./src/ts/Serialization/*"
-            ],
-            "@DebugTools/*": [
-                "./src/ts/DebugTools/*"
-            ],
-            "@HTML/*": [
-                "./src/ts/HTML/*"
-            ],
-            "@Configs/*": [
-                "./src/ts/Configs/*"
-            ],
-            "@Urls/*": [
-                "./src/ts/Urls/*"
-            ],
-            "@Environment/*": [
-                "./src/ts/Environment/*"
-            ],
-            "@Tests/*": [
-                "./tests/*"
-            ],
-            "@Profiler/*": [
-                "./src/ts/Profiler/*"
-            ],
-            "@DataStructures/*": [
-                "./src/ts/DataStructures/*"
-            ],
-            "@Algorithms/*": [
-                "./src/ts/Algorithms/*"
-            ],
-            "@CommunicationChannelForIFrame/*": [
-                "./src/ts/CommunicationChannelForIFrame/*"
-            ],
-            "@Localization/*": [
-                "./src/ts/Localization/*"
-            ],
-            "@Bootstrapper/*": [
-                "./src/ts/Bootstrapper/*"
-            ],
-            "@Materials/*": [
-                "./src/ts/Materials/*"
-            ],
-            "@Customization/*": [
-                "./src/ts/Customization/*"
             ],
             "@Redux/*": [
                 "./src/ts/Redux/*"
             ],
-            "@Loaders/*": [
-                "./src/ts/Loaders/*"
+            "@React/*": [
+                "./src/ts/React/*"
             ],
-            "@Effects/*": [
-                "./src/ts/Effects/*"
+            "@Fetcher/*": [
+                "./src/ts/Fetcher/*"
+            ],
+            "@Environment/*": [
+                "./src/ts/Environment/*"
             ]
         },
         // "noUnusedLocals": true, // This is set to true in 'mocha-tests-strict'
