@@ -64,7 +64,6 @@ sections:
         skills:
           - skillName: "C#"
           - skillName: "Typescript/Javascript"
-          - skillName: ""
           - skillName: "HTML/CSS/SASS"
           - skillName: "Python"
           - skillName: "Bash"

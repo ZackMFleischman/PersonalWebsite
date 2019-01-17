@@ -31,3 +31,90 @@ body {
     display: inline-block;
     cursor: pointer;
 }
+
+.about {
+    background-color: grey;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-greeting {
+    font-size: 1em;
+    font-style: italic;
+}
+
+.about-title {
+    font-size: 2em;
+    font-style: bold;
+}
+
+.about-subtitle {
+    font-size: 1.3em;
+}
+
+.menu {
+    background-color: palevioletred;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-item {
+    font-size: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.work {
+    background-color: blue;
+}
+
+.title {
+    background-color: aqua;
+    color: black;
+    font-size: 1.6em;
+}
+
+.job {
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.project {
+    background-color: olivedrab;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.skills {
+    background-color: burlywood;
+}
+
+.skill-groups-container {
+    background-color: mediumpurple;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.skills-group {
+    background-color: gold;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-group-title {
+    color: hotpink;
+    font-size: 1.2em;
+}
+
+.skill {
+    color: hotpink;
+    font-size: 0.9em;
+}
