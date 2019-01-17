@@ -19,14 +19,25 @@ export class WebsiteComponent extends React.Component<IWebsiteProps> {
         return (
             <div>
                 <Menu />
-                <About />
-                <Work />
-                <Projects />
-                <Skills />
-                <Connect />
+                { this._getSections() }
                 <Footer />
             </div>
         );
+    }
+
+    private _getSections(): JSX.Element[] {
+        return this.props.model.sectionsToRender.map(this._getSection);
+    }
+
+    private _getSection(sectionID: string): JSX.Element {
+        switch (sectionID) {
+            case "about": return (<About />);
+            case "work": return (<Work />);
+            case "projects": return (<Projects />);
+            case "skills": return (<Skills />);
+            case "connect": return (<Connect />);
+            default: return <div />;
+        }
     }
 }
 
