@@ -115,6 +115,21 @@ body {
 }
 
 .skill {
-    color: hotpink;
+    color: darkcyan;
     font-size: 0.9em;
+}
+
+.connect {
+    background-color: green;
+}
+
+.social-media-list {
+    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer {
+    background-color: black;
+    color: whitesmoke;
 }

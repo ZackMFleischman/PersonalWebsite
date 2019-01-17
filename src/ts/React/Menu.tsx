@@ -28,7 +28,7 @@ const mapStateToProps = (state: IStoreModel) => {
         menuItems: state.sectionsToRender.map(sectionID => {
             const section: ISection = state.sections[sectionID];
             return section.menuTitle;
-        })
+        }).filter(menuItem => menuItem !== undefined) as string[]
     };
 };
 

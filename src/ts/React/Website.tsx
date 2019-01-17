@@ -1,12 +1,13 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import IStoreModel from "../Redux/IModels";
-import CSS from "@Sass/styles.scss";
 import { About } from "@React/About";
 import { Menu } from "@React/Menu";
 import { Work } from "@React/Work";
 import { Projects } from "@React/Projects";
 import { Skills } from "@React/Skills";
+import { Connect } from "@React/Connect";
+import Footer from "@React/Footer";
 
 interface IWebsiteProps {
     model: IStoreModel;
@@ -22,25 +23,10 @@ export class WebsiteComponent extends React.Component<IWebsiteProps> {
                 <Work />
                 <Projects />
                 <Skills />
-                <div className={ CSS.websiteClass }>
-                    { this._getButton(1) }
-                    { this._getButton(2) }
-                    { this._getButton(3) }
-                </div>
+                <Connect />
+                <Footer />
             </div>
         );
-    }
-
-    private _getButton(num: number): JSX.Element {
-        return (
-            <button className={ CSS.buttonClass } onClick={ this._onClick }>
-                { WebsiteComponent.buttonText + num }
-            </button>
-        );
-    }
-
-    protected _onClick = (mouseEvent?: React.MouseEvent<HTMLElement>) => {
-        console.log("Button Pressed");
     }
 }
 

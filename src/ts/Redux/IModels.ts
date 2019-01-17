@@ -4,7 +4,7 @@ export interface IMap<T> {
 
 export interface ISection {
     id: string;
-    menuTitle: string;
+    menuTitle?: string;
     title: string;
     subtitle?: string;
 }

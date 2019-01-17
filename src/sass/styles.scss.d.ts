@@ -16,3 +16,6 @@ export const skillGroupsContainer: string;
 export const skillsGroup: string;
 export const skillGroupTitle: string;
 export const skill: string;
+export const connect: string;
+export const socialMediaList: string;
+export const footer: string;
