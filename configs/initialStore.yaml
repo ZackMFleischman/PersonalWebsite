@@ -8,7 +8,7 @@ sectionsToRender:
 sections:
   about:
     id: about
-    greeting: "Hey, I'm"
+    greeting: "Hi, I'm"
     title: "Zack M Fleischman"
     subtitle: "I build software."
     backgroundImage: headshot.png

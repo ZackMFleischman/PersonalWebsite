@@ -12,6 +12,7 @@ export const hamburgerIcon: string;
 export const menu: string;
 export const menuItem: string;
 export const hamburgerMenuContainer: string;
+export const menuOpen: string;
 export const work: string;
 export const title: string;
 export const job: string;

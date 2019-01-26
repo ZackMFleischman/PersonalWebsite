@@ -31,7 +31,7 @@ export class MenuComponent extends React.Component<IMenuProps, IMenuState> {
             <div>
                 <div className={ CSS.menu }>
                     { this._getMenuItems() }
-                    { this.state.menuOpen && this._getHamburgerMenu() }
+                    { true && this._getHamburgerMenu() }
                     { this._getHamburger() }
                 </div>
             </div>
@@ -40,9 +40,10 @@ export class MenuComponent extends React.Component<IMenuProps, IMenuState> {
 
     private _getHamburgerMenu(): JSX.Element {
         return (
-            <div className={ CSS.hamburgerMenuContainer }>
+            <div className={ `${CSS.hamburgerMenuContainer} ${this.state.menuOpen ? CSS.menuOpen : ""}` }>
                 { this._getMenuItems() }
-            </div>
+            </div >
+
         );
     }
 
