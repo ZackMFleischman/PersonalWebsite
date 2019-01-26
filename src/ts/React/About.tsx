@@ -11,9 +11,14 @@ export class AboutComponent extends React.Component<IAboutProps> {
     public render() {
         return (
             <div className={ CSS.about } >
-                <span className={ CSS.aboutGreeting }>{ this.props.aboutModel.greeting }</span>
-                <span className={ CSS.aboutTitle }>{ this.props.aboutModel.title }</span>
-                <span className={ CSS.aboutSubtitle }>{ this.props.aboutModel.subtitle }</span>
+                <div className={ CSS.aboutBlurb }>
+                    <span className={ CSS.aboutGreeting + " " + CSS.aboutBlurbItem }>
+                        { this.props.aboutModel.greeting }</span>
+                    <span className={ CSS.aboutTitle + " " + CSS.aboutBlurbItem }>
+                        { this.props.aboutModel.title }</span>
+                    <span className={ CSS.aboutSubtitle + " " + CSS.aboutBlurbItem }>
+                        { this.props.aboutModel.subtitle }</span>
+                </div>
             </div>
         );
     }

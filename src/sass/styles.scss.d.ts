@@ -2,6 +2,8 @@ export const idMain: string;
 export const websiteClass: string;
 export const buttonClass: string;
 export const about: string;
+export const aboutBlurb: string;
+export const aboutBlurbItem: string;
 export const aboutGreeting: string;
 export const aboutTitle: string;
 export const aboutSubtitle: string;

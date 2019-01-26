@@ -26,6 +26,21 @@ module.exports = (env, argv) => {
 
         module: {
             rules: [
+                // {
+                //     test: /\.(png|jpg|gif)$/i,
+                //     use: [
+                //         {
+                //             loader: 'url-loader?name=[name].[ext]',
+                //             options: {
+                //                 limit: 8192
+                //             }
+                //         }
+                //     ]
+                // },
+                {
+                    test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico|otf)$/,
+                    use: 'file-loader?name=assets/[name].[ext]'
+                },
                 {
                     // TypeScript
                     test: /\.tsx?$/,
@@ -53,7 +68,11 @@ module.exports = (env, argv) => {
                             loader: "sass-loader"
                         }
                     ]
-                }
+                },
+                // {
+                //     test: /\.jpe?g$|\.gif$|\.png$/i,
+                //     loader: "file-loader?name=/img/[name].[ext]"
+                // }
             ]
         },
 

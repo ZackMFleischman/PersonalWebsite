@@ -1,4 +1,5 @@
 @import "colors";
+@import "media-queries";
 
 $main-font: verdana, sans-serif;
 
@@ -33,11 +34,32 @@ body {
 }
 
 .about {
-    background-color: grey;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    background-image: url("../../assets/images/artsy2.jpg");
+    background-size:cover;
+    background-position: 50% 0%;
+    top: 50%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    padding: 200px 0px;
+
+    @include media-phone {
+        padding: 350px 0px 50px 0px;
+    }
+}
+
+.about-blurb {
     display: flex;
     flex-direction: column;
+    padding-left: 4em;
+    text-shadow: 2px 2px #FFFFFF;
+    @include media-phone {
+        padding-left: 2em;
+    }
+}
+
+.about-blurb-item {
+    margin:2px;
 }
 
 .about-greeting {
@@ -55,15 +77,28 @@ body {
 }
 
 .menu {
-    background-color: palevioletred;
+    // background-color: palevioletred;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    // Flex box stuff
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
 }
 
 .menu-item {
-    font-size: 2em;
-    padding-left: 1em;
+    color: black;
+    font-size: 1.4em;
+    padding-top: 0.5em;
     padding-right: 1em;
+    text-decoration: none;
+    transition: color 0.2s;
+    text-transform: uppercase;
+}
+
+.menu-item:hover {
+    color: royalblue;
 }
 
 .work {
