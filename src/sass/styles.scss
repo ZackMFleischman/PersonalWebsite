@@ -53,7 +53,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-left: 5em;
-    text-shadow: 2px 2px #FFFFFF;
+    text-shadow: 2px 2px #FFFAFA;
 
     @media (max-width: #{$greeting-move}) {
         padding-left: 2em;
@@ -72,6 +72,7 @@ body {
 .about-title {
     font-size: 3em;
     font-style: bold;
+    font-family: 'Ovo', serif;
 
     @media (max-width: $hamburger-start) {
         font-size: 2.3em;
