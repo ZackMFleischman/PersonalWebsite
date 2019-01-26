@@ -13,14 +13,61 @@ interface IMenuProps {
     menuItems: IMenuItem[];
 }
 
-export class MenuComponent extends React.Component<IMenuProps> {
+interface IMenuState {
+    menuOpen: boolean;
+}
+
+export class MenuComponent extends React.Component<IMenuProps, IMenuState> {
+    constructor(props: IMenuProps) {
+        super(props);
+
+        this.state = {
+            menuOpen: false
+        };
+    }
+
     public render() {
         return (
-            <div className={ CSS.menu }>
+            <div>
+                <div className={ CSS.menu }>
+                    { this._getMenuItems() }
+                    { this.state.menuOpen && this._getHamburgerMenu() }
+                    { this._getHamburger() }
+                </div>
+            </div>
+        );
+    }
+
+    private _getHamburgerMenu(): JSX.Element {
+        return (
+            <div className={ CSS.hamburgerMenuContainer }>
                 { this._getMenuItems() }
             </div>
         );
     }
+
+    private _getHamburger(): JSX.Element {
+        return (
+            <div className={ CSS.hamburgerIcon } onClick={ this._toggleHamburgerMenu }>
+                <div />
+                <div />
+                <div />
+            </div>
+        );
+    }
+
+    private _toggleHamburgerMenu = () => {
+        this.setState({
+            menuOpen: !this.state.menuOpen
+        });
+    }
+
+    private _collapseMenu = () => {
+        this.setState({
+            menuOpen: false
+        });
+    }
+
     private _getMenuItems(): JSX.Element[] {
         return this.props.menuItems.map((item, index) => {
             return (
@@ -28,6 +75,7 @@ export class MenuComponent extends React.Component<IMenuProps> {
                     href={ "#" + item.id }
                     key={ index }
                     className={ CSS.menuItem }
+                    onClick={ this._collapseMenu }
                 >
                     { item.title }
                 </ a>
