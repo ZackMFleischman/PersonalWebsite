@@ -12,7 +12,7 @@ interface ISkillsProps {
 export class SkillsComponent extends React.Component<ISkillsProps> {
     public render() {
         return (
-            <div className={ CSS.skills } >
+            <div id={ this.props.skillsModel.id } className={ CSS.skills } >
                 <Title title={ this.props.skillsModel.title } />
                 <div className={ CSS.skillGroupsContainer }>
                     { this._getSkillsGroups() }

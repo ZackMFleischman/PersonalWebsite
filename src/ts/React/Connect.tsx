@@ -13,7 +13,7 @@ interface IConnectProps {
 export class ConnectComponent extends React.Component<IConnectProps> {
     public render() {
         return (
-            <div className={ CSS.connect } >
+            <div id={ this.props.connectModel.id } className={ CSS.connect } >
                 <Title title={ this.props.connectModel.title } />
                 <SocialMediaList
                     key="hireMe"

@@ -4,8 +4,13 @@ import { connect } from "react-redux";
 import IStoreModel, { ISection } from "../Redux/IModels";
 import CSS from "@Sass/styles.scss";
 
+interface IMenuItem {
+    id: string;
+    title: string;
+}
+
 interface IMenuProps {
-    menuItems: string[];
+    menuItems: IMenuItem[];
 }
 
 export class MenuComponent extends React.Component<IMenuProps> {
@@ -18,7 +23,15 @@ export class MenuComponent extends React.Component<IMenuProps> {
     }
     private _getMenuItems(): JSX.Element[] {
         return this.props.menuItems.map((item, index) => {
-            return (<span key={ index } className={ CSS.menuItem }> { item }</ span>);
+            return (
+                <a
+                    href={ "#" + item.id }
+                    key={ index }
+                    className={ CSS.menuItem }
+                >
+                    { item.title }
+                </ a>
+            );
         });
     }
 }
@@ -27,8 +40,11 @@ const mapStateToProps = (state: IStoreModel) => {
     return {
         menuItems: state.sectionsToRender.map(sectionID => {
             const section: ISection = state.sections[sectionID];
-            return section.menuTitle;
-        }).filter(menuItem => menuItem !== undefined) as string[]
+            return {
+                id: section.id,
+                title: section.menuTitle
+            };
+        }).filter(menuItem => menuItem.title !== undefined) as IMenuItem[]
     };
 };
 

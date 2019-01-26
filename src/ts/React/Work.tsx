@@ -12,7 +12,7 @@ interface IWorkProps {
 export class WorkComponent extends React.Component<IWorkProps> {
     public render() {
         return (
-            <div className={ CSS.work } >
+            <div id={ this.props.workModel.id } className={ CSS.work } >
                 <Title title={ this.props.workModel.title } />
                 { this._getJobComponents() }
             </div>

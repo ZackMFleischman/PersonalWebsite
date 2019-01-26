@@ -13,7 +13,7 @@ interface IProjectsProps {
 export class ProjectsComponent extends React.Component<IProjectsProps> {
     public render() {
         return (
-            <div className={ CSS.work } >
+            <div id={ this.props.projectsModel.id } className={ CSS.work } >
                 <Title title={ this.props.projectsModel.title } />
                 { this._getProjectsComponents() }
             </div>
