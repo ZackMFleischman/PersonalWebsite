@@ -7,7 +7,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 export async function createStore(): Promise<Store> {
     const fetcher = new Fetcher();
 
-    const initialStoreSlug: string = "configs/initialStore.yaml";
+    const initialStoreSlug: string = "configs/store.yaml";
     const initialStore: IStoreModel = await fetcher.fetchYamlAsInterface<IStoreModel>(initialStoreSlug);
 
     return createReduxStore(

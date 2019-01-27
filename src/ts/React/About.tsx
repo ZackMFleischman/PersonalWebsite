@@ -9,8 +9,12 @@ interface IAboutProps {
 
 export class AboutComponent extends React.Component<IAboutProps> {
     public render() {
+        const backgroundImageStyle = {
+            backgroundImage: `url(${this.props.aboutModel.backgroundImage})`
+        };
+
         return (
-            <div className={ CSS.about } >
+            <div className={ CSS.about } style={ backgroundImageStyle } >
                 <div className={ CSS.aboutImage }>
                     <div className={ CSS.aboutBlurb }>
                         <span className={ CSS.aboutGreeting + " " + CSS.aboutBlurbItem }>

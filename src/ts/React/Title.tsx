@@ -8,7 +8,7 @@ interface ITitleProps {
 export default class Title extends React.Component<ITitleProps> {
     public render() {
         return (
-            <span className={ CSS.title }>{ this.props.title }</span>
+            <h1 className={ CSS.title }>{ this.props.title }</h1>
         );
     }
 }

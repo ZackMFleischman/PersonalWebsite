@@ -8,13 +8,12 @@ $hamburger-start: 500px;
 $greeting-move: 900px;
 
 #idMain {
-    background-color: $color-light;
+    background-color: #D5D5D5;
 }
 
 body {
     font: $main-font;
     margin: 0;
-    background-color: $color-light;
     h1,
     h2 {
         color: $color-dark;
@@ -40,7 +39,6 @@ body {
 .about {
     background-color: #FBFBFB;
     padding: 350px 0px 50px 0px;
-    background-image: url("../../assets/images/artsy3.jpg");
     background-size:cover;
     background-position: 75% 0%;
 }
@@ -71,11 +69,10 @@ body {
 
 .about-title {
     font-size: 3em;
-    font-style: bold;
     font-family: 'Ovo', serif;
 
     @media (max-width: $hamburger-start) {
-        font-size: 2.3em;
+        font-size: 2.2em;
     }
 }
 
@@ -163,26 +160,109 @@ body {
     color: black;
     font-size: 1.4em;
     padding: 9px 0px;
-
-
 }
 
-.work {
-    background-color: blue;
+#work {
+    background-color: #D5D5D5;
+    h1 {
+        color: #3c3c3c;
+    }
+}
+
+#projects {
+    background-color: #545454;
+    h1 {
+        color: #EBEBEB;
+    }
+}
+
+#skills {
+    background-color: #ABABAB;
+}
+
+#connect {
+    background-color: #444444;
+    h1 {
+        color: #cdcdcd;
+    }
 }
 
 .title {
-    background-color: aqua;
-    color: black;
-    font-size: 1.6em;
+    color: #525252;
+    text-transform: uppercase;
+    font-size: 2.6em;
+    text-align: center;
+    margin-block-start: 0.0em;
+    margin-block-end: 0.5em;
+
+    @media (max-width: $hamburger-start) {
+        font-size: 2.0em;
+    }
 }
 
 .job {
-    background-color: brown;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @media (max-width: $hamburger-start) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.job-image {
+    width: 200px;
+    height: auto;
+    min-height: 200px;
+    object-fit: contain;
+    padding-right: 2.4em;
+
+    @media (max-width: $hamburger-start) {
+        padding-right: inherit;
+        padding-bottom: 1.5em;
+    }
+}
+
+.job-details-container {
+    // background-color: brown;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-top: 1em;
     margin-bottom: 1em;
+    width: 50%
+}
+
+.job-product {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.job-company {
+    font-size: 1.6em;
+    text-transform: uppercase;
+}
+
+.section {
+    background-color: transparent;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5em 0px;
+}
+
+.job-title {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.job-description {
+    font-size: 1.0em;
+    white-space: pre-wrap;
+    font-family: inherit;
 }
 
 .project {
@@ -193,44 +273,75 @@ body {
     margin-bottom: 1em;
 }
 
-.skills {
-    background-color: burlywood;
-}
-
 .skill-groups-container {
-    background-color: mediumpurple;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    flex-basis: 0.4;
+    justify-content: space-evenly;
+    width: 85%;
 }
 
 .skills-group {
-    background-color: gold;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background-color: #D5D5D5;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 15px;
 }
 
 .skill-group-title {
-    color: hotpink;
-    font-size: 1.2em;
+    color: #424242;
+    font-size: 1.7em;
 }
 
 .skill {
-    color: darkcyan;
-    font-size: 0.9em;
-}
-
-.connect {
-    background-color: green;
+    color: black;
+    font-size: 1.2em;
+    align-self: left;
 }
 
 .social-media-list {
-    background-color: yellow;
+    background-color: transparent;
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.social-media-list-title {
+    color: black;
+    font-size: 1.9em;
+}
+
+.social-media-icon {
+    width: 3em;
+    height: 3em;
+    margin: 5px;
+}
+
+.email-me-button {
+    color: black;
+    font-size: 1.4em;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #D5D5D5;
+    border-radius: 17px;
+    padding: 8px;
+    text-transform: lowercase;
+    margin-top: 5px;
+
+    &:hover {
+        background-color: #AAAAAA;
+    }
+}
+
+.connect-container {
+    padding: 0x;
 }
 
 .footer {
-    background-color: black;
+    background-color: #212121;
     color: whitesmoke;
 }

@@ -11,7 +11,7 @@ sections:
     greeting: "Hi, I'm"
     title: "Zack M Fleischman"
     subtitle: "I build software."
-    backgroundImage: headshot.png
+    backgroundImage: ../../assets/images/artsy3.jpg 
 
   work:
     id: work
@@ -21,8 +21,10 @@ sections:
       - company: Strypes
         product: "3D Fashion Configurator"
         title: "Cofounder and CTO"
-        description: "Strypes was a thing."
-        imageUrl: strypesImage.png
+        description: "As their CTO, I am leading the technology charge, solving the problem of 'How do we build this 3D experience easily and quickly?'.\n\n
+To do this, I’m bringing Strypes to the forefront of the 3D Technology utilizing several different tools from various different industries such as the Gaming, 3D Web Design, 3D Digitization, and VR/AR.
+"
+        imageUrl: ../../assets/images/StrypesLogo.png
 
       - company: Microsoft
         product: XBox
@@ -53,47 +55,64 @@ sections:
       - title: "High Level Skills"
         skills:
           - skillName: "Software Architecture"
-          - skillName: "Game Development"
-          - skillName: "Web Development"
           - skillName: "Engineering Management"
           - skillName: "Business Development"
+          - skillName: "Web Development"
+          - skillName: "Game Development"
           - skillName: "Tooling and Automation"
           - skillName: "DevOps"
       - title: "Languages"
         skills:
-          - skillName: "C#"
           - skillName: "Typescript/Javascript"
-          - skillName: "HTML/CSS/SASS"
+          - skillName: "C#"
+          - skillName: "C/C++"
           - skillName: "Python"
           - skillName: "Bash"
+          - skillName: "HTML/CSS/SASS"
           - skillName: "Processing"
-      - title: "Frameworks and Services"
+      - title: "Frameworks & Tools"
         skills:
           - skillName: "Unity 3D"
+          - skillName: "BabylonJS"
           - skillName: "React/Redux"
           - skillName: "AWS"
-          - skillName: "BabylonJS"
-          - skillName: "Click"
+          - skillName: "Node"
+          - skillName: "Jenkins"
+          - skillName: "Mocha"
 
   connect:
     id: connect
     title: "Connect With Me"
     menuTitle: Connect
     hireMe:
-      - linkedIn
+      - github
     followMe: 
       - twitter
-    emailMe: ZackMFleischman@gmail.com
+      - linkedIn
+      - angelList
+    emailMe: ZackMFleischman+website@gmail.com
 
 socialMedia:
   twitter: 
     id: twitter
     label: Twitter
-    url: twitter.com/ZackMFleischman
-    icon: twitterIcon.png
+    url: https://www.twitter.com/ZackMFleischman
+    icon: ../../assets/images/twitter_logo.png
 
   linkedIn: 
     id: linkedIn
     label: LinkedIn
-    url: linkedIn.com/ZackMFleischman
-    icon: linkedInIcon.png
+    url: https://www.linkedIn.com/in/ZackMFleischman
+    icon: ../../assets/images/linkedin_logo.png 
+
+  angelList:
+    id: angelList
+    label: AngelList
+    url: https://angel.co/zackmfleischman
+    icon: ../../assets/images/angellist_logo.png
+
+  github:
+    id: github
+    label: Github
+    url: https://github.com/ZackMFleischman
+    icon: ../../assets/images/github_logo.png

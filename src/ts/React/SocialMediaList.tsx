@@ -11,7 +11,7 @@ export default class SocialMediaList extends React.Component<ISocialMediaListPro
     public render() {
         return (
             <div className={ CSS.socialMediaList } >
-                <span>{ this.props.title }</span>
+                <span className={ CSS.socialMediaListTitle }>{ this.props.title }</span>
                 { this._getSocialMediaComponents() }
             </div>
         );
@@ -20,7 +20,9 @@ export default class SocialMediaList extends React.Component<ISocialMediaListPro
     private _getSocialMediaComponents(): JSX.Element[] {
         return this.props.socialMediaList.map((socialMedia, index) => {
             return (
-                <a key={ index } href={ socialMedia.url }>{ socialMedia.label }</a>
+                <a key={ index } href={ socialMedia.url } >
+                    <img className={ CSS.socialMediaIcon } src={ `${socialMedia.icon}` } alt={ socialMedia.label } />
+                </a >
             );
         });
     }

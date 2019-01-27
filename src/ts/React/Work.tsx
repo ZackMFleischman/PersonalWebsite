@@ -1,26 +1,12 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import IStoreModel, { IWorkSection } from "@Redux/IModels";
-import CSS from "@Sass/styles.scss";
-import Title from "@React/Title";
 import Job from "@React/Job";
+import Section from "@React/Section";
 
-interface IWorkProps {
-    workModel: IWorkSection;
-}
-
-export class WorkComponent extends React.Component<IWorkProps> {
-    public render() {
-        return (
-            <div id={ this.props.workModel.id } className={ CSS.work } >
-                <Title title={ this.props.workModel.title } />
-                { this._getJobComponents() }
-            </div>
-        );
-    }
-
-    private _getJobComponents(): JSX.Element[] {
-        return this.props.workModel.jobs.map((jobModel, index) => {
+export class WorkComponent extends Section<IWorkSection> {
+    protected _getSectionContent(): JSX.Element | JSX.Element[] {
+        return this.props.model.jobs.map((jobModel, index) => {
             return (<Job key={ index } jobModel={ jobModel } />);
         });
     }
@@ -28,7 +14,7 @@ export class WorkComponent extends React.Component<IWorkProps> {
 
 const mapStateToProps = (state: IStoreModel) => {
     return {
-        workModel: state.sections["work"] as IWorkSection,
+        model: state.sections["work"] as IWorkSection,
     };
 };
 

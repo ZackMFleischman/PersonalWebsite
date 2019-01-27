@@ -11,9 +11,15 @@ export default class Job extends React.Component<IJobProps> {
         const job: IJob = this.props.jobModel;
         return (
             <div className={ CSS.job } >
-                <span>{ job.product }, { job.company }</span>
-                <span>{ job.title }</span>
-                <span>{ job.description }</span>
+                <img className={ CSS.jobImage } src={ this.props.jobModel.imageUrl } alt="IMAGE URL NOT FOUND" />
+                <div className={ CSS.jobDetailsContainer }>
+                    <div>
+                        <span className={ CSS.jobProduct }>{ job.product }</span>
+                        <span className={ CSS.jobCompany }>  -  { job.company }</span>
+                    </div>
+                    <span className={ CSS.jobTitle }>{ job.title }</span>
+                    <pre className={ CSS.jobDescription }>{ job.description }</pre>
+                </div>
             </div>
         );
     }
