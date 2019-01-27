@@ -7,6 +7,10 @@ $main-font: verdana, sans-serif;
 $hamburger-start: 500px;
 $greeting-move: 900px;
 
+html {
+    scroll-behavior: smooth;
+}
+
 #idMain {
     background-color: #D5D5D5;
 }
