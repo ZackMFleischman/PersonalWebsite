@@ -14,7 +14,6 @@ interface IWebsiteProps {
 }
 
 export class WebsiteComponent extends React.Component<IWebsiteProps> {
-    public static buttonText: string = "[Button Text]";
     public render() {
         return (
             <div>
