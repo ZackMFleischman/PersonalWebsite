@@ -17,14 +17,29 @@ export default class Project extends React.Component<IProjectProps> {
                     <div>
                         <h2 className={ CSS.projectTitle }>{ project.title }</h2>
                         <span className={ CSS.projectDescription }>{ project.description }</span>
-                    </div>
-                    <div className={ CSS.projectLinksContainer }>
-                        <a href={ project.demoUrl }>Demo</a>
-                        <span>   |   </span>
-                        <a href={ project.sourceCodeUrl }>Source</a>
+                        { this._getProjectLinks() }
                     </div>
                 </div>
             </div>
         );
+    }
+
+    private _getProjectLinks(): JSX.Element {
+        if (this.props.projectModel.demoUrl !== undefined) {
+            return (
+                <div className={ CSS.projectLinksContainer }>
+                    <a href={ this.props.projectModel.demoUrl }>Demo</a>
+                    <span>   |   </span>
+                    <a href={ this.props.projectModel.sourceCodeUrl }>Source</a>
+                </div>
+            );
+        } else {
+            return (
+                <div className={ CSS.projectLinksContainer }>
+                    <a href={ this.props.projectModel.sourceCodeUrl }>Source</a>
+                </div>
+            );
+        }
+
     }
 }

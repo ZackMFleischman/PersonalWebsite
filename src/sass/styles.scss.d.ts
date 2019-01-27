@@ -19,6 +19,7 @@ export const skills: string;
 export const connect: string;
 export const title: string;
 export const job: string;
+export const seeMoreProjects: string;
 export const jobImage: string;
 export const jobDetailsContainer: string;
 export const jobProduct: string;
