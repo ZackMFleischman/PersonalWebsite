@@ -53,6 +53,18 @@ To do this, I’m bringing Strypes to the forefront of the 3D Technology utilizi
         sourceCodeUrl: https://github.com/ZackMFleischman/CircleMagic 
         demoUrl: https://giant.gfycat.com/DeficientShowyEft.webm 
 
+      - title: Koch Snowflake
+        description: >-
+          As their CTO, I am leading the technology charge, solving the problem of 
+          'How do we build this 3D experience easily and quickly?'.
+
+
+          To do this, I’m bringing Strypes to the forefront of the 3D Technology utilizing 
+          several different tools from various different industries such as the Gaming, 
+          3D Web Design, 3D Digitization, and VR/AR.
+        imageUrl: https://github.com/ZackMFleischman/kochsnowflake/raw/master/KockSnowflakeAnimation.gif
+        sourceCodeUrl: https://github.com/ZackMFleischman/kochsnowflake 
+
   skills: 
     id: skills
     menuTitle: Skills

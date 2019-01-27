@@ -16,7 +16,7 @@ export default class Project extends React.Component<IProjectProps> {
                 <div className={ CSS.projectTextContainer }>
                     <div>
                         <h2 className={ CSS.projectTitle }>{ project.title }</h2>
-                        <span className={ CSS.projectDescription }>{ project.description }</span>
+                        <pre className={ CSS.projectDescription }>{ project.description }</pre>
                         { this._getProjectLinks() }
                     </div>
                 </div>
