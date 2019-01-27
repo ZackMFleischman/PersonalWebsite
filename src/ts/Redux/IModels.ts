@@ -22,6 +22,7 @@ export interface IProject {
     description: string;
     imageUrl: string;
     sourceCodeUrl: string;
+    demoUrl: string;
 }
 
 export interface IAboutSection extends ISection {

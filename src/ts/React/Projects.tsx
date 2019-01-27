@@ -1,8 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import IStoreModel, { IProjectsSection } from "@Redux/IModels";
-import CSS from "@Sass/styles.scss";
-import Title from "@React/Title";
 import Project from "@React/Project";
 import Section from "@React/Section";
 

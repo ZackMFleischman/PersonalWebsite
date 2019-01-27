@@ -9,11 +9,21 @@ interface IProjectProps {
 export default class Project extends React.Component<IProjectProps> {
     public render() {
         const project: IProject = this.props.projectModel;
+
         return (
             <div className={ CSS.project } >
-                <span>{ project.title }</span>
-                <span>{ project.description }</span>
-                <a href={ project.sourceCodeUrl }>Source Code</a>
+                <img className={ CSS.projectImage } src={ this.props.projectModel.imageUrl } />
+                <div className={ CSS.projectTextContainer }>
+                    <div>
+                        <h2 className={ CSS.projectTitle }>{ project.title }</h2>
+                        <span className={ CSS.projectDescription }>{ project.description }</span>
+                    </div>
+                    <div className={ CSS.projectLinksContainer }>
+                        <a href={ project.demoUrl }>Demo</a>
+                        <span>   |   </span>
+                        <a href={ project.sourceCodeUrl }>Source</a>
+                    </div>
+                </div>
             </div>
         );
     }

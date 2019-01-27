@@ -38,14 +38,20 @@ To do this, I’m bringing Strypes to the forefront of the 3D Technology utilizi
     title: "What I've built for fun"
     projects:
       - title: Mandelbrot Set Zoomer
-        description: Zoom in on the Mandelbrot Set
-        imageUrl: mandelbrot.gif
-        sourceCodeUrl: mandelbrot.html
+        description: "As their CTO, I am leading the technology charge, solving the problem of 'How do we build this 3D experience easily and quickly?'.\n\n
+To do this, I’m bringing Strypes to the forefront of the 3D Technology utilizing several different tools from various different industries such as the Gaming, 3D Web Design, 3D Digitization, and VR/AR.
+"
+        imageUrl: ../../assets/images/mandelbrot.jpg
+        sourceCodeUrl: https://github.com/ZackMFleischman/mandelbrot
+        demoUrl: https://www.youtube.com/watch?v=VPickbK8sSY
 
       - title: Circle Magic
-        description: Wooooaahhhh circles!
-        imageUrl: circles.gif
-        sourceCodeUrl: circles.html
+        description: "As their CTO, I am leading the technology charge, solving the problem of 'How do we build this 3D experience easily and quickly?'.\n\n
+To do this, I’m bringing Strypes to the forefront of the 3D Technology utilizing several different tools from various different industries such as the Gaming, 3D Web Design, 3D Digitization, and VR/AR.
+"
+        imageUrl: ../../assets/images/circlemagic.png
+        sourceCodeUrl: https://github.com/ZackMFleischman/CircleMagic 
+        demoUrl: https://giant.gfycat.com/DeficientShowyEft.webm 
 
   skills: 
     id: skills
