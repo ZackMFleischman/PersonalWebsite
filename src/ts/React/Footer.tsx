@@ -5,7 +5,8 @@ export default class Footer extends React.Component {
     public render() {
         return (
             <div className={ CSS.footer } >
-                <span>©  Zack M Fleischman (2019)</span>
+                <span>©  Zack M Fleischman (2019) - </span>
+                <a href="https://github.com/ZackMFleischman/PersonalWebsite">source code</a>
             </div>
         );
     }
