@@ -1,11 +1,15 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import IStoreModel, { IWorkSection } from "@Redux/IModels";
+import IStoreModel, { IWorkSection, ISocialMedia } from "@Redux/IModels";
 import Job from "@React/Job";
-import Section from "@React/Section";
+import Section, { ISectionProps } from "@React/Section";
 import CSS from "@Sass/styles.scss";
 
-export class WorkComponent extends Section<IWorkSection> {
+interface IWorkProps extends ISectionProps<IWorkSection> {
+    linkedIn?: ISocialMedia;
+}
+
+export class WorkComponent extends Section<IWorkSection, IWorkProps> {
     protected _getSectionContent(): JSX.Element | JSX.Element[] {
         const content: JSX.Element[] = this._getJobs();
         content.push(this._getSeeMoreJobs());
@@ -19,20 +23,24 @@ export class WorkComponent extends Section<IWorkSection> {
     }
 
     private _getSeeMoreJobs(): JSX.Element {
-        return (
-            <a
-                className={ CSS.seeMoreButton }
-                href="https://www.linkedin.com/in/ZackMFleischman"
-            >
-                See more on LinkedIn
-            </a>
-        );
+        if (this.props.linkedIn !== undefined)
+            return (
+                <a
+                    className={ CSS.seeMoreButton }
+                    href={ this.props.linkedIn.url }
+                >
+                    See more on LinkedIn
+                </a >
+            );
+        else
+            return <div />;
     }
 }
 
 const mapStateToProps = (state: IStoreModel) => {
     return {
         model: state.sections["work"] as IWorkSection,
+        linkedIn: "linkedIn" in state.socialMedia ? state.socialMedia["linkedIn"] : undefined
     };
 };
 
