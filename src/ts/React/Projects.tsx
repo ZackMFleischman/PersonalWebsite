@@ -21,7 +21,7 @@ export class ProjectsComponent extends Section<IProjectsSection> {
     private _getSeeMoreProjects(): JSX.Element {
         return (
             <a
-                className={ CSS.seeMoreProjects }
+                className={ CSS.seeMoreButton }
                 href="https://www.github.com/ZackMFleischman"
             >
                 See more on Github

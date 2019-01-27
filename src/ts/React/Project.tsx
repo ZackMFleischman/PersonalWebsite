@@ -27,7 +27,7 @@ export default class Project extends React.Component<IProjectProps> {
     private _getProjectLinks(): JSX.Element {
         if (this.props.projectModel.demoUrl !== undefined) {
             return (
-                <div className={ CSS.projectLinksContainer }>
+                <div className={ CSS.linksContainer }>
                     <a href={ this.props.projectModel.demoUrl }>Demo</a>
                     <span>   |   </span>
                     <a href={ this.props.projectModel.sourceCodeUrl }>Source</a>
@@ -35,7 +35,7 @@ export default class Project extends React.Component<IProjectProps> {
             );
         } else {
             return (
-                <div className={ CSS.projectLinksContainer }>
+                <div className={ CSS.linksContainer }>
                     <a href={ this.props.projectModel.sourceCodeUrl }>Source</a>
                 </div>
             );

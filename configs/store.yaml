@@ -1,8 +1,8 @@
 sectionsToRender:
   - about
+  - skills
   - work
   - projects
-  - skills
   - connect
 
 sections:
@@ -24,13 +24,21 @@ sections:
         description: "As their CTO, I am leading the technology charge, solving the problem of 'How do we build this 3D experience easily and quickly?'.\n\n
 To do this, I’m bringing Strypes to the forefront of the 3D Technology utilizing several different tools from various different industries such as the Gaming, 3D Web Design, 3D Digitization, and VR/AR.
 "
-        imageUrl: ../../assets/images/StrypesLogo.png
+        imageUrl: ../../assets/images/StrypesProductPersonalization2.png
+
+      - company: Zynga
+        product: FarmVille 2
+        title: "Senior Software Engineer"
+        description: "FarmVille 2 Games and shit. XBox 360, Xbox One, and Kinect. Rapid prototyping blah blah blah"
+        imageUrl: ../../assets/images/zynga_farmville2_logo.png 
+        demoUrl: https://www.youtube.com/watch?v=jhRFsX_1FgE
 
       - company: Microsoft
-        product: XBox
+        product: XBox & Kinect
         title: "Software Engineer"
         description: "XBox 360, Xbox One, and Kinect. Rapid prototyping blah blah blah"
-        imageUrl: microsoft.png
+        imageUrl: ../../assets/images/microsoft_xbox_kinect_logo.png 
+        demoUrl: https://www.youtube.com/watch?v=jhRFsX_1FgE
 
   projects:
     id: projects

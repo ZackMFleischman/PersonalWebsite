@@ -15,6 +15,7 @@ export interface IJob {
     title: string;
     description: string;
     imageUrl: string;
+    demoUrl?: string;
 }
 
 export interface IProject {
