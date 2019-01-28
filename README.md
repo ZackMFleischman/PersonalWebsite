@@ -5,10 +5,5 @@ This site is built in Typescript using React/Redux to store state. The use of re
 
 ### How to build and deploy
 
-Build and run with webpack-dev-server: `npm start`
-
-Build for dev: `npm run dev`
-
-Build for prod: `npm run prod`
-
-Deploy to the webz: `npm run deploy`
+- Build dev and run with webpack-dev-server: `npm start`
+- Build prod and deploy to the webz: `npm run deploy`
