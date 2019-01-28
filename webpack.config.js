@@ -8,7 +8,7 @@ const webpackDevServerPort = 9001;
 const webpackDevServerUrl = buildUrl(webpackDevServerIP, webpackDevServerPort);
 
 // Production Server Url
-const productionServerUrl = "http://cloudfront.fill.me.in/";
+const productionServerUrl = "http://website-zackmfleischman.s3-website-us-west-1.amazonaws.com/";
 
 module.exports = (env, argv) => {
     const mode = getMode(argv);
@@ -29,7 +29,8 @@ module.exports = (env, argv) => {
                 {
                     // Pictures
                     test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico|otf)$/,
-                    use: 'file-loader?name=assets/[name].[ext]'
+                    // use: 'file-loader?name=assets/[name].[ext]'
+                    use: 'file-loader'
                 },
                 {
                     // TypeScript
