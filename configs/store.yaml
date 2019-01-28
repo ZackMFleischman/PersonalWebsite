@@ -91,17 +91,6 @@ sections:
         sourceCodeUrl: https://github.com/ZackMFleischman/mandelbrot
         demoUrl: https://www.youtube.com/watch?v=VPickbK8sSY
 
-      - title: Wave Interference Patterns
-        description: >-
-          This program visualizes 2 ripple waves colliding with each other.
-
-
-          I wanted to create something beautiful using only ellipses, and after much experimentation and iteration
-          I came across this pattern which you can see interact in the demo below.
-        imageUrl: ../../assets/images/circlemagic.png
-        sourceCodeUrl: https://github.com/ZackMFleischman/CircleMagic 
-        demoUrl: https://giant.gfycat.com/DeficientShowyEft.webm 
-
       - title: Koch Snowflake
         description: >-
           The <a href="http://mathworld.wolfram.com/KochSnowflake.html">Koch Snowflake</a> is another well known fractal
@@ -127,6 +116,18 @@ sections:
           my website using a <a href="https://github.com/ZackMFleischman/PersonalWebsite/blob/master/configs/store.yaml">single yaml file</a>.
         imageUrl: ../../assets/images/zackmfleischman_project_image.png 
         sourceCodeUrl: https://github.com/ZackMFleischman/PersonalWebsite 
+
+      - title: Wave Interference Patterns
+        description: >-
+          This program visualizes 2 ripple waves colliding with each other.
+
+
+          I wanted to create something beautiful using only ellipses, and after much experimentation and iteration
+          I came across this pattern which you can see interact in the demo below.
+        imageUrl: ../../assets/images/circlemagic.png
+        sourceCodeUrl: https://github.com/ZackMFleischman/CircleMagic 
+        demoUrl: https://giant.gfycat.com/DeficientShowyEft.webm 
+
 
   skills: 
     id: skills
