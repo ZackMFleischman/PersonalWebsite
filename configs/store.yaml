@@ -157,6 +157,7 @@ sections:
     menuTitle: Connect
     hireMe:
       - github
+      - codementor
     followMe: 
       - twitter
       - linkedIn
@@ -187,3 +188,9 @@ socialMedia:
     label: Github
     url: https://github.com/ZackMFleischman
     icon: ../../assets/images/github_logo.png
+
+  codementor:
+    id: codementor
+    label: CodeMentor
+    url: https://www.codementor.io/zackmfleischman
+    icon: ../../assets/images/codementor_logo.jpg
