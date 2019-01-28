@@ -76,30 +76,45 @@ sections:
     title: "What I've built for fun"
     projects:
       - title: Mandelbrot Set Zoomer
-        description: "As their CTO, I am leading the technology charge, solving the problem of 'How do we build this 3D experience easily and quickly?'.\n\n
-To do this, I’m bringing Strypes to the forefront of the 3D Technology utilizing several different tools from various different industries such as the Gaming, 3D Web Design, 3D Digitization, and VR/AR.
-"
+        description: >-
+          This program is a visualizer for the <a href="http://mathworld.wolfram.com/MandelbrotSet.html">Mandelbrot Set</a>.
+
+
+          I love the beauty and complexity that can come out of this simple equation:
+            
+          <i>z<sub>n+1</sub> = z<sub>n</sub><sup>2</sup> + C</i>
+          
+
+          This program is capable of being used interactively to dive into the fractal wherever you like,
+          or in headless mode, which spits out all the frames of a video zooming into a specific point in the set.
         imageUrl: ../../assets/images/mandelbrot.jpg
         sourceCodeUrl: https://github.com/ZackMFleischman/mandelbrot
         demoUrl: https://www.youtube.com/watch?v=VPickbK8sSY
 
-      - title: Circle Magic
-        description: "As their CTO, I am leading the technology charge, solving the problem of 'How do we build this 3D experience easily and quickly?'.\n\n
-To do this, I’m bringing Strypes to the forefront of the 3D Technology utilizing several different tools from various different industries such as the Gaming, 3D Web Design, 3D Digitization, and VR/AR.
-"
+      - title: Wave Interference Patterns
+        description: >-
+          This program visualizes 2 ripple waves colliding with each other.
+
+
+          I wanted to create something beautiful using only ellipses, and after much experimentation and iteration
+          I came across this pattern which you can see interact in the demo below.
         imageUrl: ../../assets/images/circlemagic.png
         sourceCodeUrl: https://github.com/ZackMFleischman/CircleMagic 
         demoUrl: https://giant.gfycat.com/DeficientShowyEft.webm 
 
       - title: Koch Snowflake
         description: >-
-          As their CTO, I am leading the technology charge, solving the problem of 
-          'How do we build this 3D experience easily and quickly?'.
+          The <a href="http://mathworld.wolfram.com/KochSnowflake.html">Koch Snowflake</a> is another well known fractal
+          that is generated from inserting 2/3rds of an equalateral triangle into the middle third of each line segment each
+          iteration.
 
 
-          To do this, I’m bringing Strypes to the forefront of the 3D Technology utilizing 
-          several different tools from various different industries such as the Gaming, 
-          3D Web Design, 3D Digitization, and VR/AR.
+          One fascinating property of this structure is that if you were to iterate an infinite number of times, it would
+          have an infinitely sized perimeter, but still be contained within a finite area.
+
+
+          I wanted to visualize and animate this fractal as it grows more complex with iteration, and the animation here
+          is the result.
         imageUrl: https://github.com/ZackMFleischman/kochsnowflake/raw/master/KockSnowflakeAnimation.gif
         sourceCodeUrl: https://github.com/ZackMFleischman/kochsnowflake 
 
