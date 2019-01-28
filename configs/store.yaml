@@ -118,6 +118,16 @@ sections:
         imageUrl: https://github.com/ZackMFleischman/kochsnowflake/raw/master/KockSnowflakeAnimation.gif
         sourceCodeUrl: https://github.com/ZackMFleischman/kochsnowflake 
 
+      - title: "ZackMFleischman.com"
+        description: >-
+          I wanted to build my site completely over-engineered so I can easily modify it whenever I want.
+
+
+          Thus I set about building it using Typescript/React/Redux so I can control the entire contents of
+          my website using a <a href="https://github.com/ZackMFleischman/PersonalWebsite/blob/master/configs/store.yaml">single yaml file</a>.
+        imageUrl: ../../assets/images/zackmfleischman_project_image.png 
+        sourceCodeUrl: https://github.com/ZackMFleischman/PersonalWebsite 
+
   skills: 
     id: skills
     menuTitle: Skills
