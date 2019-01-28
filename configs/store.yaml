@@ -166,8 +166,8 @@ sections:
     title: "Connect With Me"
     menuTitle: Connect
     hireMe:
-      - github
       - codementor
+      - github
     followMe: 
       - twitter
       - linkedIn
