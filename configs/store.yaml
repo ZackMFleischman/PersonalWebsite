@@ -21,22 +21,52 @@ sections:
       - company: Strypes
         product: "3D Fashion Configurator"
         title: "Cofounder and CTO"
-        description: "As their CTO, I am leading the technology charge, solving the problem of 'How do we build this 3D experience easily and quickly?'.\n\n
-To do this, I’m bringing Strypes to the forefront of the 3D Technology utilizing several different tools from various different industries such as the Gaming, 3D Web Design, 3D Digitization, and VR/AR.
-"
+        description: >-
+          Strypes' software is used to allow retail fashion brands unprecedented levels of customization for their 
+          products through a realistic 3D game-like experience. 
+          
+
+          As Strypes' CTO, I am leading the technology charge, building and managing a team to solve the myriad 
+          problems involved in bringing video game tech to the retail space, including efficient 3D product digitization,
+          novel UI/UX design, and in-browser real-time 3D rendering to name a few.
+
+
+          I balance my time between coding, project management, code review, engineering managment, UI/UX design, investor outreach, and customer support.
         imageUrl: ../../assets/images/StrypesProductPersonalization2.png
+        demoUrl: https://app.box.com/v/StrypesDemoVideo
 
       - company: Zynga
         product: FarmVille 2
         title: "Senior Software Engineer"
-        description: "FarmVille 2 Games and shit. XBox 360, Xbox One, and Kinect. Rapid prototyping blah blah blah"
+        description: >-
+          I designed, prototyped and implemented large scale features in FarmVille 2 (a sandbox farming simulator game).
+
+
+          Most notably, I led a team of 6 to build the "State Fair" feature, which changed the game from a single-player 
+          sandbox game, to a competitive multiplayer game in the form of a weekly recurring tournament.
+          
+
+          This involved building out matchmaking, leaderboards, social communication, and scaling the system to 
+          handle 1.5 million users.
+
         imageUrl: ../../assets/images/zynga_farmville2_logo.png 
-        demoUrl: https://www.youtube.com/watch?v=jhRFsX_1FgE
+        demoUrl: https://www.youtube.com/watch?v=1GqR_nNzZQQ&feature=youtu.be&t=395
 
       - company: Microsoft
-        product: XBox & Kinect
+        product: Xbox & Kinect
         title: "Software Engineer"
-        description: "XBox 360, Xbox One, and Kinect. Rapid prototyping blah blah blah"
+        description: >-
+          I joined the Xbox team right as we got our hands on the Kinect alpha hardware when one knew what to do with it.
+
+
+          I did rapid prototyping and implementation to integrate the Kinect motion sensing camera seamlessly into the Xbox's dashboard.
+          This involved gesture recognition (for which I hold a <a href="https://bit.ly/2sSnyvq">patent</a>), 
+          voice recognition, and UI/UX design and implementation. 
+          
+
+          My software went on to ship to 56 million consoles, and the Kinect won the title of 
+          <a href="http://www.guinnessworldrecords.com/world-records/fastest-selling-gaming-peripheral/">"Fastest selling gaming peripheral"</a>
+          in the Guiness Book of World Records.
         imageUrl: ../../assets/images/microsoft_xbox_kinect_logo.png 
         demoUrl: https://www.youtube.com/watch?v=jhRFsX_1FgE
 

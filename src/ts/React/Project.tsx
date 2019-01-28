@@ -16,7 +16,10 @@ export default class Project extends React.Component<IProjectProps> {
                 <div className={ CSS.projectTextContainer }>
                     <div>
                         <h2 className={ CSS.projectTitle }>{ project.title }</h2>
-                        <pre className={ CSS.projectDescription }>{ project.description }</pre>
+                        <pre
+                            className={ CSS.projectDescription }
+                            dangerouslySetInnerHTML={ { __html: project.description } }
+                        />
                         { this._getProjectLinks() }
                     </div>
                 </div>

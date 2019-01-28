@@ -18,7 +18,10 @@ export default class Job extends React.Component<IJobProps> {
                         <span className={ CSS.jobCompany }>  -  { job.product }</span>
                     </div>
                     <span className={ CSS.jobTitle }>{ job.title }</span>
-                    <pre className={ CSS.jobDescription }>{ job.description }</pre>
+                    <pre
+                        className={ CSS.jobDescription }
+                        dangerouslySetInnerHTML={ { __html: job.description } }
+                    />
 
                     { this._getJobDemo() }
                 </div>
