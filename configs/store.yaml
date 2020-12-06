@@ -11,12 +11,12 @@ sections:
     greeting: "Hi, I'm"
     title: "Zack M Fleischman"
     subtitle: "I build software."
-    backgroundImage: ../../assets/images/artsy3.jpg 
+    backgroundImage: ../../assets/images/artsy3.jpg
 
   work:
     id: work
     menuTitle: Work
-    title: "What I’ve built professionally"
+    title: "A sampling of what I’ve built professionally"
     jobs:
       - company: Strypes
         product: "3D Fashion Configurator"
@@ -26,12 +26,12 @@ sections:
           products through a realistic 3D game-like experience. 
           
 
-          As Strypes' CTO, I am leading the technology charge, building and managing a team to solve the myriad 
-          problems involved in bringing video game tech to the retail space, including efficient 3D product digitization,
+          As Strypes' CTO, I led the technology charge, building and managing a team to solve the myriad of 
+          problems involved in bringing video game tech to the fashion retail space, including efficient 3D product digitization,
           novel UI/UX design, and in-browser real-time 3D rendering to name a few.
 
 
-          I balance my time between coding, project management, code review, engineering managment, UI/UX design, investor outreach, and customer support.
+          I balanced my time between coding, project management, code review, engineering managment, UI/UX design, investor outreach, and customer support.
         imageUrl: ../../assets/images/StrypesProductPersonalization2.png
         demoUrl: https://app.box.com/v/StrypesDemoVideo
 
@@ -56,7 +56,7 @@ sections:
         product: Xbox & Kinect
         title: "Software Engineer"
         description: >-
-          I joined the Xbox team right as we got our hands on the Kinect alpha hardware when one knew what to do with it.
+          I joined the Xbox team right as we got our hands on the Kinect alpha hardware when no one knew what to do with it.
 
 
           I did rapid prototyping and implementation to integrate the Kinect motion sensing camera seamlessly into the Xbox's dashboard.
@@ -126,13 +126,13 @@ sections:
     skillGroups:
       - title: "High Level Skills"
         skills:
+          - skillName: "Frontend Web Development"
+          - skillName: "Tech Lead"
           - skillName: "Software Architecture"
-          - skillName: "Engineering Management"
-          - skillName: "Business Development"
-          - skillName: "Web Development"
-          - skillName: "Game Development"
           - skillName: "Tooling and Automation"
-          - skillName: "DevOps"
+          - skillName: "Game Development"
+          - skillName: "Business Development"
+          - skillName: "Engineering Management"
       - title: "Languages"
         skills:
           - skillName: "Typescript/Javascript"
@@ -144,13 +144,13 @@ sections:
           - skillName: "Processing"
       - title: "Frameworks & Tools"
         skills:
+          - skillName: "React/Redux"
+          - skillName: "Jest/Mocha/Chai"
+          - skillName: "Selenium/Puppeteer"
           - skillName: "Unity 3D"
           - skillName: "BabylonJS"
-          - skillName: "React/Redux"
           - skillName: "AWS"
           - skillName: "Node"
-          - skillName: "Jenkins"
-          - skillName: "Mocha"
 
   connect:
     id: connect

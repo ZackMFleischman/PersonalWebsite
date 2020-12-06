@@ -7,6 +7,7 @@ import CSS from "@Sass/styles.scss";
 interface IMenuItem {
     id: string;
     title: string;
+    url?: string;
 }
 
 interface IMenuProps {
@@ -31,8 +32,8 @@ export class MenuComponent extends React.Component<IMenuProps, IMenuState> {
             <div>
                 <div className={ CSS.menu }>
                     { this._getMenuItems() }
-                    { true && this._getHamburgerMenu() }
-                    { this._getHamburger() }
+                    { this._getHamburgerMenu() }
+                    { this._getHamburgerIcon() }
                 </div>
             </div>
         );
@@ -47,7 +48,7 @@ export class MenuComponent extends React.Component<IMenuProps, IMenuState> {
         );
     }
 
-    private _getHamburger(): JSX.Element {
+    private _getHamburgerIcon(): JSX.Element {
         return (
             <div className={ CSS.hamburgerIcon } onClick={ this._toggleHamburgerMenu }>
                 <div />
@@ -73,7 +74,7 @@ export class MenuComponent extends React.Component<IMenuProps, IMenuState> {
         return this.props.menuItems.map((item, index) => {
             return (
                 <a
-                    href={ "#" + item.id }
+                    href={ item.url ? item.url : "#" + item.id }
                     key={ index }
                     className={ CSS.menuItem }
                     onClick={ this._collapseMenu }
@@ -86,14 +87,25 @@ export class MenuComponent extends React.Component<IMenuProps, IMenuState> {
 }
 
 const mapStateToProps = (state: IStoreModel) => {
-    return {
-        menuItems: state.sectionsToRender.map(sectionID => {
+    const sectionMenuItems = state.sectionsToRender.map(sectionID => {
             const section: ISection = state.sections[sectionID];
             return {
                 id: section.id,
                 title: section.menuTitle
             };
-        }).filter(menuItem => menuItem.title !== undefined) as IMenuItem[]
+        }).filter(menuItem => menuItem.title !== undefined) as IMenuItem[];
+
+    const resumeMenuItem = {
+      id: "resume",
+      title: "Resumé",
+      url: "../../assets/pdfs/ZackMFleischmanResume.pdf"
+    };
+
+    return {
+        menuItems: [
+          ...sectionMenuItems,
+          resumeMenuItem
+        ]
     };
 };
 
