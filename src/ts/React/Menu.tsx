@@ -97,7 +97,7 @@ const mapStateToProps = (state: IStoreModel) => {
 
     const resumeMenuItem = {
       id: "resume",
-      title: "Resumé",
+      title: "Resum\u00C9",
       url: "../../assets/pdfs/ZackMFleischmanResume.pdf"
     };
 
