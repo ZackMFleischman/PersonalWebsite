@@ -8,7 +8,8 @@ const webpackDevServerPort = 9001;
 const webpackDevServerUrl = buildUrl(webpackDevServerIP, webpackDevServerPort);
 
 // Production Server Url
-const productionServerUrl = "http://www.zackmfleischman.com/";
+// const productionServerUrl = "http://www.zackmfleischman.com/";
+const productionServerUrl = "https://s3-us-west-1.amazonaws.com/www.zackmfleischman.com/";
 
 module.exports = (env, argv) => {
     const mode = getMode(argv);
