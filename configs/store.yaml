@@ -10,7 +10,7 @@ sections:
     id: about
     greeting: "Hi, I'm"
     title: "Zack M Fleischman"
-    subtitle: "I build software."
+    subtitle: "Staff Software Engineer"
     backgroundImage: ../../assets/images/artsy3.jpg
 
   work:
@@ -26,7 +26,7 @@ sections:
           products through a realistic 3D game-like experience. 
           
 
-          As Strypes' CTO, I led the technology charge, building and managing a team to solve the myriad of 
+          As Strypes' CTO, I lead the technology charge, building and managing a team to solve the myriad of 
           problems involved in bringing video game tech to the fashion retail space, including efficient 3D product digitization,
           novel UI/UX design, and in-browser real-time 3D rendering to name a few.
 
@@ -127,30 +127,35 @@ sections:
       - title: "High Level Skills"
         skills:
           - skillName: "Frontend Web Development"
-          - skillName: "Tech Lead"
+          - skillName: "3D Graphics"
           - skillName: "Software Architecture"
+          - skillName: "Tech Lead"
           - skillName: "Tooling and Automation"
-          - skillName: "Game Development"
-          - skillName: "Business Development"
-          - skillName: "Engineering Management"
+          - skillName: "Project Management"
+          - skillName: "Mentorship"
       - title: "Languages"
         skills:
           - skillName: "Typescript/Javascript"
-          - skillName: "C#"
-          - skillName: "C/C++"
           - skillName: "Python"
-          - skillName: "Bash"
-          - skillName: "HTML/CSS/SASS"
+          - skillName: "C++"
+          - skillName: "C#"
+          - skillName: "Java"
           - skillName: "Processing"
+          - skillName: "HTML/CSS/SASS"
+          - skillName: "Bash"
       - title: "Frameworks & Tools"
         skills:
-          - skillName: "React/Redux"
+          - skillName: "React"
+          - skillName: "MobX/Redux"
+          - skillName: "ThreeJs/BabylonJS/Unity"
           - skillName: "Jest/Mocha/Chai"
-          - skillName: "Selenium/Puppeteer"
-          - skillName: "Unity 3D"
-          - skillName: "BabylonJS"
-          - skillName: "AWS"
-          - skillName: "Node"
+          - skillName: "Playwright/Cypress/Puppeteer/Selenium"
+          - skillName: "Bazel/Webpack"
+          - skillName: "Honeycomb/Datadog/Sentry"
+          - skillName: "BuildKite/Circle CI/Github Actions/Jenkins"
+          - skillName: "NextJs/Vercel"
+          - skillName: "Docker/Kubernetes"
+          - skillName: "AWS (various different tools)"
 
   connect:
     id: connect
