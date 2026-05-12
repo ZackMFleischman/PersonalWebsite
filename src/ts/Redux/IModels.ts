@@ -60,6 +60,17 @@ export interface ISocialMedia {
     icon: string;
 }
 
+export interface IApp {
+    slug: string;
+    name: string;
+    description: string;
+    embedUrl: string;
+    githubUrl?: string;
+    thumbnailUrl?: string;
+    thumbnailGradient?: [string, string];
+    tags?: string[];
+}
+
 export interface ISocialMediaMap extends IMap<ISocialMedia> { }
 export interface ISectionMap extends IMap<ISection> { }
 
@@ -73,10 +84,12 @@ export default interface IStoreModel {
     sectionsToRender: string[];
     sections: ISectionMap;
     socialMedia: ISocialMediaMap;
+    apps: IApp[];
 }
 
 export const emptyStore: IStoreModel = {
     sectionsToRender: [],
     sections: {},
-    socialMedia: {}
+    socialMedia: {},
+    apps: []
 };

@@ -1,12 +1,17 @@
 import * as React from "react";
-import { IAppEntry, getApps } from "./AppsManifest";
+import { connect } from "react-redux";
+import IStoreModel, { IApp } from "../Redux/IModels";
 import CSS from "@Sass/apps.scss";
+
+interface IAppsGridProps {
+    apps: IApp[];
+}
 
 interface IAppsGridState {
     query: string;
 }
 
-export class AppsGrid extends React.Component<{}, IAppsGridState> {
+export class AppsGridComponent extends React.Component<IAppsGridProps, IAppsGridState> {
     public state: IAppsGridState = {
         query: ""
     };
@@ -16,7 +21,7 @@ export class AppsGrid extends React.Component<{}, IAppsGridState> {
     }
 
     public render() {
-        const apps = this._getFilteredApps();
+        const filtered = this._getFilteredApps();
 
         return (
             <div className={ CSS.appsPage }>
@@ -33,11 +38,11 @@ export class AppsGrid extends React.Component<{}, IAppsGridState> {
                     />
                 </header>
 
-                { apps.length === 0
+                { filtered.length === 0
                     ? <div className={ CSS.appsEmpty }>No apps match “{ this.state.query }”.</div>
                     : (
                         <ul className={ CSS.appsGrid }>
-                            { apps.map(app => this._renderCard(app)) }
+                            { filtered.map(app => this._renderCard(app)) }
                         </ul>
                     )
                 }
@@ -45,7 +50,7 @@ export class AppsGrid extends React.Component<{}, IAppsGridState> {
         );
     }
 
-    private _renderCard(app: IAppEntry): JSX.Element {
+    private _renderCard(app: IApp): JSX.Element {
         const thumbStyle: React.CSSProperties = app.thumbnailUrl
             ? { backgroundImage: `url(${app.thumbnailUrl})` }
             : app.thumbnailGradient
@@ -89,13 +94,12 @@ export class AppsGrid extends React.Component<{}, IAppsGridState> {
         event.stopPropagation();
     }
 
-    private _getFilteredApps(): IAppEntry[] {
+    private _getFilteredApps(): IApp[] {
         const query = this.state.query.trim().toLowerCase();
-        const apps = getApps();
         if (query.length === 0) {
-            return apps;
+            return this.props.apps;
         }
-        return apps.filter(app => {
+        return this.props.apps.filter(app => {
             const haystack = [
                 app.name,
                 app.description,
@@ -106,3 +110,9 @@ export class AppsGrid extends React.Component<{}, IAppsGridState> {
         });
     }
 }
+
+const mapStateToProps = (state: IStoreModel) => ({
+    apps: state.apps
+});
+
+export const AppsGrid = connect(mapStateToProps)(AppsGridComponent);

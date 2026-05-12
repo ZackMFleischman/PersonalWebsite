@@ -1,4 +1,3 @@
-export const idAppsRoot: string;
 export const appsPage: string;
 export const appsHeader: string;
 export const appsHome: string;

@@ -7,21 +7,13 @@ $apps-card-bg: #2a2a31;
 $apps-card-bg-hover: #34343c;
 $apps-accent: #b68d4c;
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-#idAppsRoot {
+.apps-page {
     min-height: 100vh;
     background-color: $apps-bg;
     color: $apps-fg;
     font-family: 'Playfair Display', serif;
-}
-
-.apps-page {
     padding: 32px 48px 64px 48px;
+    box-sizing: border-box;
 
     @include media-phone {
         padding: 20px 16px 48px 16px;

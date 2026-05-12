@@ -1,11 +1,17 @@
 const path = require("path");
+const fs = require("fs");
 const webpack = require("webpack");
+const yaml = require("js-yaml");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-// Apps list is duplicated here (kept in sync with src/ts/Apps/AppsManifest.ts)
-// so the webpack build can emit a static HTML file for each app slug.
-// S3 then serves /apps/<slug>/index.html for the direct URL.
-const APP_SLUGS = ["mandelbrot-explorer", "radials"];
+// Apps are declared in configs/store.yaml and read here so the build can emit
+// a per-slug index.html (so direct URLs like /apps/foo/ work on S3 without
+// redirect rules). One source of truth for both the runtime and the build.
+function readAppSlugs() {
+    const yamlPath = path.join(__dirname, "configs/store.yaml");
+    const parsed = yaml.safeLoad(fs.readFileSync(yamlPath, "utf8"));
+    return ((parsed && parsed.apps) || []).map(app => app.slug);
+}
 
 // Webpack Server Url
 const webpackDevServerIP = "0.0.0.0";
@@ -18,13 +24,13 @@ const productionServerUrl = "https://s3-us-west-1.amazonaws.com/www.zackmfleisch
 
 module.exports = (env, argv) => {
     const mode = getMode(argv);
+    const appSlugs = readAppSlugs();
 
     const config = {
         mode: mode,
 
         entry: {
-            "websiteBundle": path.join(__dirname, "./src/ts/React/Main.tsx"),
-            "appsBundle": path.join(__dirname, "./src/ts/Apps/AppsMain.tsx")
+            "websiteBundle": path.join(__dirname, "./src/ts/React/Main.tsx")
         },
 
         output: {
@@ -83,6 +89,7 @@ module.exports = (env, argv) => {
                 "@Sass": path.resolve(__dirname, "src/sass/"),
                 "@Redux": path.resolve(__dirname, "src/ts/Redux/"),
                 "@React": path.resolve(__dirname, "src/ts/React/"),
+                "@Apps": path.resolve(__dirname, "src/ts/Apps/"),
                 "@Environment": path.resolve(__dirname, "src/ts/Environment/"),
                 "@Fetcher": path.resolve(__dirname, "src/ts/Fetcher/")
             },
@@ -115,27 +122,24 @@ module.exports = (env, argv) => {
                 template: __dirname + "/src/html/index.html",
                 favicon: __dirname + "/assets/images/favicon.ico",
                 environment: mode,
-                chunks: ["websiteBundle"],
             }),
 
             // Apps grid page at /apps/
             new HtmlWebpackPlugin({
                 hash: true,
                 filename: "apps/index.html",
-                template: __dirname + "/src/html/apps.html",
+                template: __dirname + "/src/html/index.html",
                 favicon: __dirname + "/assets/images/favicon.ico",
                 environment: mode,
-                chunks: ["appsBundle"],
             }),
 
-            // Per-app pages at /apps/<slug>/ - same template, bundle reads location.pathname
-            ...APP_SLUGS.map(slug => new HtmlWebpackPlugin({
+            // Per-app pages at /apps/<slug>/ - same bundle decides view by location.pathname
+            ...appSlugs.map(slug => new HtmlWebpackPlugin({
                 hash: true,
                 filename: `apps/${slug}/index.html`,
-                template: __dirname + "/src/html/apps.html",
+                template: __dirname + "/src/html/index.html",
                 favicon: __dirname + "/assets/images/favicon.ico",
                 environment: mode,
-                chunks: ["appsBundle"],
             })),
 
             // These variables are essentially #define's accessible in Typescript.
