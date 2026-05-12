@@ -26,6 +26,9 @@
             "@React/*": [
                 "./src/ts/React/*"
             ],
+            "@Apps/*": [
+                "./src/ts/Apps/*"
+            ],
             "@Fetcher/*": [
                 "./src/ts/Fetcher/*"
             ],
