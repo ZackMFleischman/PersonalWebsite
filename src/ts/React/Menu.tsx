@@ -95,6 +95,12 @@ const mapStateToProps = (state: IStoreModel) => {
             };
         }).filter(menuItem => menuItem.title !== undefined) as IMenuItem[];
 
+    const appsMenuItem = {
+      id: "apps",
+      title: "Apps",
+      url: "/apps/"
+    };
+
     const resumeMenuItem = {
       id: "resume",
       title: "Resum\u00C9",
@@ -104,6 +110,7 @@ const mapStateToProps = (state: IStoreModel) => {
     return {
         menuItems: [
           ...sectionMenuItems,
+          appsMenuItem,
           resumeMenuItem
         ]
     };

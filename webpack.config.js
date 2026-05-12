@@ -2,6 +2,11 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+// Apps list is duplicated here (kept in sync with src/ts/Apps/AppsManifest.ts)
+// so the webpack build can emit a static HTML file for each app slug.
+// S3 then serves /apps/<slug>/index.html for the direct URL.
+const APP_SLUGS = ["mandelbrot-explorer", "radials"];
+
 // Webpack Server Url
 const webpackDevServerIP = "0.0.0.0";
 const webpackDevServerPort = 9001;
@@ -18,11 +23,13 @@ module.exports = (env, argv) => {
         mode: mode,
 
         entry: {
-            "websiteBundle": path.join(__dirname, "./src/ts/React/Main.tsx")
+            "websiteBundle": path.join(__dirname, "./src/ts/React/Main.tsx"),
+            "appsBundle": path.join(__dirname, "./src/ts/Apps/AppsMain.tsx")
         },
 
         output: {
-            path: path.resolve(__dirname, "www")
+            path: path.resolve(__dirname, "www"),
+            publicPath: "/"
         },
 
         module: {
@@ -108,7 +115,28 @@ module.exports = (env, argv) => {
                 template: __dirname + "/src/html/index.html",
                 favicon: __dirname + "/assets/images/favicon.ico",
                 environment: mode,
+                chunks: ["websiteBundle"],
             }),
+
+            // Apps grid page at /apps/
+            new HtmlWebpackPlugin({
+                hash: true,
+                filename: "apps/index.html",
+                template: __dirname + "/src/html/apps.html",
+                favicon: __dirname + "/assets/images/favicon.ico",
+                environment: mode,
+                chunks: ["appsBundle"],
+            }),
+
+            // Per-app pages at /apps/<slug>/ - same template, bundle reads location.pathname
+            ...APP_SLUGS.map(slug => new HtmlWebpackPlugin({
+                hash: true,
+                filename: `apps/${slug}/index.html`,
+                template: __dirname + "/src/html/apps.html",
+                favicon: __dirname + "/assets/images/favicon.ico",
+                environment: mode,
+                chunks: ["appsBundle"],
+            })),
 
             // These variables are essentially #define's accessible in Typescript.
             // Go add a declaration for them in WebpackEnvironmentVariables.ts.
