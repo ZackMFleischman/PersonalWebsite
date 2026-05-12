@@ -1,5 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import IStoreModel, { IApp } from "../Redux/IModels";
 import CSS from "@Sass/apps.scss";
 
@@ -26,7 +27,7 @@ export class AppsGridComponent extends React.Component<IAppsGridProps, IAppsGrid
         return (
             <div className={ CSS.appsPage }>
                 <header className={ CSS.appsHeader }>
-                    <a href="/" className={ CSS.appsHome }>← Home</a>
+                    <Link to="/" className={ CSS.appsHome }>← Home</Link>
                     <h1 className={ CSS.appsTitle }>Apps</h1>
                     <input
                         type="search"
@@ -59,7 +60,7 @@ export class AppsGridComponent extends React.Component<IAppsGridProps, IAppsGrid
 
         return (
             <li key={ app.slug } className={ CSS.appCardItem }>
-                <a href={ `/apps/${app.slug}/` } className={ CSS.appCardLink }>
+                <Link to={ `/apps/${app.slug}/` } className={ CSS.appCardLink }>
                     <div className={ CSS.appCardThumb } style={ thumbStyle }>
                         { !app.thumbnailUrl && (
                             <span className={ CSS.appCardThumbLabel }>{ app.name }</span>
@@ -69,7 +70,7 @@ export class AppsGridComponent extends React.Component<IAppsGridProps, IAppsGrid
                         <h3 className={ CSS.appCardName }>{ app.name }</h3>
                         <p className={ CSS.appCardDesc }>{ app.description }</p>
                     </div>
-                </a>
+                </Link>
                 { app.githubUrl && (
                     <a
                         href={ app.githubUrl }

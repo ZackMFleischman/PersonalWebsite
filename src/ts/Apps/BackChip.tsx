@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import CSS from "@Sass/apps.scss";
 
 interface IBackChipState {
@@ -37,8 +38,8 @@ export class BackChip extends React.Component<{}, IBackChipState> {
         ].join(" ");
 
         return (
-            <a
-                href="/apps/"
+            <Link
+                to="/apps/"
                 className={ className }
                 onMouseEnter={ this._onHover }
                 onFocus={ this._onHover }
@@ -46,7 +47,7 @@ export class BackChip extends React.Component<{}, IBackChipState> {
             >
                 <span className={ CSS.backChipArrow }>{"←"}</span>
                 <span className={ CSS.backChipLabel }>Apps</span>
-            </a>
+            </Link>
         );
     }
 
