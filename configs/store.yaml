@@ -1,0 +1,227 @@
+sectionsToRender:
+  - about
+  - skills
+  - work
+  - projects
+  - connect
+
+sections:
+  about:
+    id: about
+    greeting: "Hi, I'm"
+    title: "Zack M Fleischman"
+    subtitle: "Staff Software Engineer"
+    backgroundImage: ../../assets/images/artsy3.jpg
+
+  work:
+    id: work
+    menuTitle: Work
+    title: "A sampling of what I’ve built professionally"
+    jobs:
+      - company: Strypes
+        product: "3D Fashion Configurator"
+        title: "Cofounder and CTO"
+        description: >-
+          Strypes' software is used to allow retail fashion brands unprecedented levels of customization for their 
+          products through a realistic 3D game-like experience. 
+          
+
+          As Strypes' CTO, I lead the technology charge, building and managing a team to solve the myriad of 
+          problems involved in bringing video game tech to the fashion retail space, including efficient 3D product digitization,
+          novel UI/UX design, and in-browser real-time 3D rendering to name a few.
+
+
+          I balanced my time between coding, project management, code review, engineering managment, UI/UX design, investor outreach, and customer support.
+        imageUrl: ../../assets/images/StrypesProductPersonalization2.png
+        demoUrl: https://app.box.com/v/StrypesDemoVideo
+
+      - company: Zynga
+        product: FarmVille 2
+        title: "Senior Software Engineer"
+        description: >-
+          I designed, prototyped and implemented large scale features in FarmVille 2 (a sandbox farming simulator game).
+
+
+          Most notably, I led a team of 6 to build the "State Fair" feature, which changed the game from a single-player 
+          sandbox game, to a competitive multiplayer game in the form of a weekly recurring tournament.
+          
+
+          This involved building out matchmaking, leaderboards, social communication, and scaling the system to 
+          handle 1.5 million users.
+
+        imageUrl: ../../assets/images/zynga_farmville2_logo.png 
+        demoUrl: https://www.youtube.com/watch?v=1GqR_nNzZQQ&feature=youtu.be&t=395
+
+      - company: Microsoft
+        product: Xbox & Kinect
+        title: "Software Engineer"
+        description: >-
+          I joined the Xbox team right as we got our hands on the Kinect alpha hardware when no one knew what to do with it.
+
+
+          I did rapid prototyping and implementation to integrate the Kinect motion sensing camera seamlessly into the Xbox's dashboard.
+          This involved gesture recognition (for which I hold a <a href="https://bit.ly/2sSnyvq">patent</a>), 
+          voice recognition, and UI/UX design and implementation. 
+          
+
+          My software went on to ship to 56 million consoles, and the Kinect won the title of 
+          <a href="http://www.guinnessworldrecords.com/world-records/fastest-selling-gaming-peripheral/">"Fastest selling gaming peripheral"</a>
+          in the Guiness Book of World Records.
+        imageUrl: ../../assets/images/microsoft_xbox_kinect_logo.png 
+        demoUrl: https://www.youtube.com/watch?v=jhRFsX_1FgE
+
+  projects:
+    id: projects
+    menuTitle: Projects
+    title: "What I've built for fun"
+    projects:
+      - title: Mandelbrot Set Zoomer
+        description: >-
+          This program is a visualizer for the <a href="http://mathworld.wolfram.com/MandelbrotSet.html">Mandelbrot Set</a>.
+
+
+          I love the beauty and complexity that can come out of this simple equation:
+            
+          <i>z<sub>n+1</sub> = z<sub>n</sub><sup>2</sup> + C</i>
+          
+
+          This program is capable of being used interactively to dive into the fractal wherever you like,
+          or in headless mode, which spits out all the frames of a video zooming into a specific point in the set.
+        imageUrl: ../../assets/images/mandelbrot.jpg
+        sourceCodeUrl: https://github.com/ZackMFleischman/mandelbrot
+        demoUrl: https://www.youtube.com/watch?v=VPickbK8sSY
+
+      - title: Koch Snowflake
+        description: >-
+          The <a href="http://mathworld.wolfram.com/KochSnowflake.html">Koch Snowflake</a> is another well known fractal
+          that is generated from inserting 2/3rds of an equalateral triangle into the middle third of each line segment each
+          iteration.
+
+
+          One fascinating property of this structure is that if you were to iterate an infinite number of times, it would
+          have an infinitely sized perimeter, but still be contained within a finite area.
+
+
+          I wanted to visualize and animate this fractal as it grows more complex with iteration, and the animation here
+          is the result.
+        imageUrl: https://github.com/ZackMFleischman/kochsnowflake/raw/master/KockSnowflakeAnimation.gif
+        sourceCodeUrl: https://github.com/ZackMFleischman/kochsnowflake 
+
+      - title: Wave Interference Patterns
+        description: >-
+          This program visualizes 2 ripple waves colliding with each other.
+
+
+          I wanted to create something beautiful using only ellipses, and after much experimentation and iteration
+          I came across this pattern which you can see interact in the demo below.
+        imageUrl: ../../assets/images/circlemagic.png
+        sourceCodeUrl: https://github.com/ZackMFleischman/CircleMagic 
+        demoUrl: https://giant.gfycat.com/DeficientShowyEft.webm 
+
+
+  skills: 
+    id: skills
+    menuTitle: Skills
+    title: "My Skillset"
+    skillGroups:
+      - title: "High Level Skills"
+        skills:
+          - skillName: "Frontend Web Development"
+          - skillName: "3D Graphics"
+          - skillName: "Software Architecture"
+          - skillName: "Tech Lead"
+          - skillName: "Tooling and Automation"
+          - skillName: "Project Management"
+          - skillName: "Mentorship"
+      - title: "Languages"
+        skills:
+          - skillName: "Typescript/Javascript"
+          - skillName: "Python"
+          - skillName: "C++"
+          - skillName: "C#"
+          - skillName: "Java"
+          - skillName: "Processing"
+          - skillName: "HTML/CSS/SASS"
+          - skillName: "Bash"
+      - title: "Frameworks & Tools"
+        skills:
+          - skillName: "React"
+          - skillName: "MobX/Redux"
+          - skillName: "ThreeJs/BabylonJS/Unity"
+          - skillName: "Jest/Mocha/Chai"
+          - skillName: "Playwright/Cypress/Puppeteer/Selenium"
+          - skillName: "Bazel/Webpack"
+          - skillName: "Honeycomb/Datadog/Sentry"
+          - skillName: "BuildKite/Circle CI/Github Actions/Jenkins"
+          - skillName: "NextJs/Vercel"
+          - skillName: "Docker/Kubernetes"
+          - skillName: "AWS (various different tools)"
+
+  connect:
+    id: connect
+    title: "Connect With Me"
+    menuTitle: Connect
+    hireMe:
+      - codementor
+      - github
+    followMe: 
+      - twitter
+      - linkedIn
+      - angelList
+    emailMe: ZackMFleischman+website@gmail.com
+
+apps:
+  - slug: mandelbrot-explorer
+    name: Mandelbrot Explorer
+    description: "Interactive zoomable visualizer for the Mandelbrot Set fractal."
+    embedUrl: https://zack-fleischman-org.github.io/mandelbrot-explorer/
+    githubUrl: https://github.com/zack-fleischman-org/mandelbrot-explorer
+    thumbnailUrl: ../../assets/images/mandelbrot.jpg
+    tags:
+      - fractal
+      - math
+      - visualization
+      - webgl
+
+  - slug: radials
+    name: Radials
+    description: "A generative geometric drawing toy."
+    embedUrl: https://radials.net
+    thumbnailGradient:
+      - "#222244"
+      - "#6f42c1"
+    tags:
+      - generative
+      - art
+      - drawing
+
+socialMedia:
+  twitter: 
+    id: twitter
+    label: Twitter
+    url: https://www.twitter.com/ZackMFleischman
+    icon: ../../assets/images/twitter_logo.png
+
+  linkedIn: 
+    id: linkedIn
+    label: LinkedIn
+    url: https://www.linkedIn.com/in/ZackMFleischman
+    icon: ../../assets/images/linkedin_logo.png 
+
+  angelList:
+    id: angelList
+    label: AngelList
+    url: https://angel.co/zackmfleischman
+    icon: ../../assets/images/angellist_logo.png
+
+  github:
+    id: github
+    label: Github
+    url: https://github.com/ZackMFleischman
+    icon: ../../assets/images/github_logo.png
+
+  codementor:
+    id: codementor
+    label: CodeMentor
+    url: https://www.codementor.io/zackmfleischman
+    icon: ../../assets/images/codementor_logo.jpg

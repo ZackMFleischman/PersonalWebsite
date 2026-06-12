@@ -1,0 +1,6 @@
+node_modules/
+dist/
+www/
+.vscode/
+.bundle-analyzer-stats.json
+**/.DS_Store
