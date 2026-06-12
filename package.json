@@ -12,7 +12,7 @@
         "stage:assets": "cp -r assets www/assets",
         "stage:configs": "cp -r configs www/configs",
         "stage:cname": "echo www.zackmfleischman.com > www/CNAME",
-        "deploy": "gh-pages -d www -b gh-pages -t true -m \"Deploying site to GitHub Pages\"",
+        "deploy": "gh-pages -d www -b gh-pages -t -m \"Deploying site to GitHub Pages\"",
         "webpack:dev-server": "webpack-dev-server --mode development",
         "webpack:dev": "webpack --mode development",
         "webpack:prod": "webpack --mode production",
