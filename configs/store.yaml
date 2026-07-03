@@ -171,6 +171,17 @@ sections:
     emailMe: ZackMFleischman+website@gmail.com
 
 apps:
+  - slug: hive
+    name: HIVE
+    description: "The board game Hive, online — invite a friend, play live or by correspondence."
+    externalUrl: https://hive.zackmfleischman.com
+    githubUrl: https://github.com/ZackMFleischman/ai-experiments
+    thumbnailUrl: ../../assets/images/hive-card.png
+    tags:
+      - game
+      - multiplayer
+      - pwa
+      - hive
   - slug: mandelbrot-explorer
     name: Mandelbrot Explorer
     description: "Interactive zoomable visualizer for the Mandelbrot Set fractal."
