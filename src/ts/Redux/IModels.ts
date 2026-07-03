@@ -64,7 +64,10 @@ export interface IApp {
     slug: string;
     name: string;
     description: string;
-    embedUrl: string;
+    // A card carries exactly one of the two: embedUrl renders in the iframe
+    // page; externalUrl links out (PWAs need a top-level browsing context).
+    embedUrl?: string;
+    externalUrl?: string;
     githubUrl?: string;
     thumbnailUrl?: string;
     thumbnailGradient?: [string, string];

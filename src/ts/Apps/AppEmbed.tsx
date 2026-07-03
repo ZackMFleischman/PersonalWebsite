@@ -14,8 +14,24 @@ interface IAppEmbedProps extends IAppEmbedOwnProps {
 
 export class AppEmbedComponent extends React.Component<IAppEmbedProps> {
     public componentDidMount() {
-        if (this.props.app) {
-            document.title = `${this.props.app.name} · Zack M Fleischman`;
+        this._syncApp();
+    }
+
+    // The store loads configs/store.yaml asynchronously, so the app prop can
+    // arrive after mount.
+    public componentDidUpdate() {
+        this._syncApp();
+    }
+
+    private _syncApp() {
+        const app = this.props.app;
+        if (app) {
+            document.title = `${app.name} · Zack M Fleischman`;
+        }
+        // External-only apps never render in the iframe page: a hand-typed
+        // /apps/{slug}/ URL redirects out instead of showing an empty frame.
+        if (app && !app.embedUrl && app.externalUrl) {
+            window.location.replace(app.externalUrl);
         }
     }
 
@@ -29,6 +45,9 @@ export class AppEmbedComponent extends React.Component<IAppEmbedProps> {
                     </div>
                 </div>
             );
+        }
+        if (!app.embedUrl) {
+            return null; // redirecting out (componentDidMount)
         }
         return (
             <div className={ CSS.appEmbedRoot }>
