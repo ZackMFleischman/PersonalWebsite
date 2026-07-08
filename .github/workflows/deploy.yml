@@ -1,0 +1,90 @@
+name: Deploy
+
+# Auto-deploy the site to GitHub Pages (the gh-pages branch, which serves
+# www.zackmfleischman.com via the staged CNAME):
+#   • push to master  -> production deploy at the domain root.
+#   • pull request     -> preview deploy under /pr-preview/pr-<N>/, with a
+#                         sticky comment linking it; removed when the PR closes.
+#
+# Legacy toolchain note: the build uses node-sass 4.9.2 + webpack 4, which only
+# build cleanly on Node 10 (the version this repo has always pinned via its
+# `node` devDependency). Node 10 pulls node-sass's prebuilt binary, so no
+# native compile is needed. Don't bump the runner Node without also migrating
+# off node-sass.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  workflow_dispatch: # manual production redeploy
+
+# Serialize every write to gh-pages (production + previews share the branch)
+# so concurrent runs can't clobber each other. Never cancel mid-deploy.
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  production:
+    name: build · deploy production
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 10
+          cache: npm
+      - run: npm ci
+      # Builds the production bundle (DEPLOY_BASE defaults to "/") and stages
+      # assets, configs, and the CNAME into www/.
+      - run: npm run predeploy
+      - name: deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./www
+          publish_branch: gh-pages
+          # Preserve the pr-preview/ subtree that PR previews live in.
+          keep_files: true
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: "Deploy site to GitHub Pages"
+
+  preview:
+    name: build · deploy PR preview
+    # Same-repo PRs only — forks can't be granted write access to gh-pages.
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        if: github.event.action != 'closed'
+        with:
+          node-version: 10
+          cache: npm
+      - run: npm ci
+        if: github.event.action != 'closed'
+      # Build under the preview subpath so bundle URLs, the config fetch, and the
+      # react-router basename all resolve at /pr-preview/pr-<N>/. Stage assets +
+      # configs (no CNAME — the subdir must not carry one).
+      - name: build preview bundle
+        if: github.event.action != 'closed'
+        env:
+          DEPLOY_BASE: /pr-preview/pr-${{ github.event.number }}/
+        run: |
+          npm run prod
+          npm run stage:assets
+          npm run stage:configs
+      - name: deploy / update / remove preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./www
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview

@@ -18,9 +18,16 @@ const webpackDevServerIP = "0.0.0.0";
 const webpackDevServerPort = 9001;
 const webpackDevServerUrl = buildUrl(webpackDevServerIP, webpackDevServerPort);
 
+// Base path the site is served under. "/" for production (the custom domain /
+// project root); a "/pr-preview/pr-N/" subpath for PR preview deploys. Every
+// path-sensitive concern derives from this single value: the webpack
+// publicPath (bundle + asset URLs), the config-fetch base (CONFIG_SERVER_URL),
+// and the react-router basename (Webpack.BASE_PATH, read in Main.tsx).
+const deployBase = normalizeBase(process.env.DEPLOY_BASE || "/");
+
 // Production Server Url - same-origin on GitHub Pages, so configs/assets are
-// fetched relative to the domain root.
-const productionServerUrl = "/";
+// fetched relative to the deploy base.
+const productionServerUrl = deployBase;
 
 module.exports = (env, argv) => {
     const mode = getMode(argv);
@@ -35,7 +42,7 @@ module.exports = (env, argv) => {
 
         output: {
             path: path.resolve(__dirname, "www"),
-            publicPath: "/"
+            publicPath: deployBase
         },
 
         module: {
@@ -178,7 +185,8 @@ function getMode(argv) {
 //      If you prefix typeof to the key, it's only defined for typeof calls.
 function getWebpackEnvironmentVariables(mode) {
     let environmentVariableMap = {
-        "Webpack.ENVIRONMENT": JSON.stringify(mode)
+        "Webpack.ENVIRONMENT": JSON.stringify(mode),
+        "Webpack.BASE_PATH": JSON.stringify(deployBase)
     };
 
     switch (mode) {
@@ -196,4 +204,13 @@ function getWebpackEnvironmentVariables(mode) {
 
 function buildUrl(ip, port, useHTTPS = false) {
     return `http${useHTTPS ? "s" : ""}://` + ip + ":" + port + "/";
+}
+
+// Normalize a base path to always have a leading and trailing slash ("/",
+// "/pr-preview/pr-4/"), so publicPath / config-fetch concatenation is stable.
+function normalizeBase(base) {
+    let b = (base || "/").trim();
+    if (!b.startsWith("/")) b = "/" + b;
+    if (!b.endsWith("/")) b = b + "/";
+    return b;
 }

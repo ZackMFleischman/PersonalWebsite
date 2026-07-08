@@ -4,6 +4,7 @@ import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter, Switch, Route, RouteComponentProps } from "react-router-dom";
 import { createStore } from "@Redux/ReduxStore";
+import Environment from "@Environment/Environment";
 import { Website } from "@React/Website";
 import { AppsGrid } from "@Apps/AppsGrid";
 import { AppEmbed } from "@Apps/AppEmbed";
@@ -22,7 +23,7 @@ createStore()
     .then(store => {
         ReactDOM.render(
             <Provider store={ store } >
-                <BrowserRouter>
+                <BrowserRouter basename={ Environment.getBasePath() }>
                     <Switch>
                         <Route path="/apps/:slug/" render={ renderEmbed } />
                         <Route path="/apps/:slug" render={ renderEmbed } />
