@@ -69,6 +69,10 @@ export interface IApp {
     thumbnailUrl?: string;
     thumbnailGradient?: [string, string];
     tags?: string[];
+    // When true, the app opens in its own tab instead of being embedded in an
+    // iframe. Required for full PWAs whose sign-in (e.g. Firebase Google OAuth)
+    // breaks under a cross-origin iframe's partitioned third-party storage.
+    external?: boolean;
 }
 
 export interface ISocialMediaMap extends IMap<ISocialMedia> { }

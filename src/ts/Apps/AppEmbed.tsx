@@ -30,6 +30,29 @@ export class AppEmbedComponent extends React.Component<IAppEmbedProps> {
                 </div>
             );
         }
+        // Full PWAs (e.g. Firebase-auth games) can't run in a cross-origin
+        // iframe — their sign-in breaks under partitioned third-party storage —
+        // so they open in their own tab from the grid. If someone lands here by
+        // a direct URL, offer a launch button rather than a broken embed.
+        if (app.external) {
+            return (
+                <div className={ CSS.appEmbedRoot }>
+                    <div className={ CSS.appLaunchScreen }>
+                        <h1 className={ CSS.appLaunchTitle }>{ app.name }</h1>
+                        <p className={ CSS.appLaunchDesc }>{ app.description }</p>
+                        <a
+                            className={ CSS.appLaunchButton }
+                            href={ app.embedUrl }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Open { app.name } ↗
+                        </a>
+                    </div>
+                    <BackChip />
+                </div>
+            );
+        }
         return (
             <div className={ CSS.appEmbedRoot }>
                 <iframe

@@ -58,19 +58,42 @@ export class AppsGridComponent extends React.Component<IAppsGridProps, IAppsGrid
                 ? { background: `linear-gradient(135deg, ${app.thumbnailGradient[0]}, ${app.thumbnailGradient[1]})` }
                 : { background: "linear-gradient(135deg, #444, #888)" };
 
+        const inner = (
+            <>
+                <div className={ CSS.appCardThumb } style={ thumbStyle }>
+                    { !app.thumbnailUrl && (
+                        <span className={ CSS.appCardThumbLabel }>{ app.name }</span>
+                    ) }
+                    { app.external && (
+                        <span className={ CSS.appCardLaunchBadge }>Opens in new tab ↗</span>
+                    ) }
+                </div>
+                <div className={ CSS.appCardBody }>
+                    <h3 className={ CSS.appCardName }>{ app.name }</h3>
+                    <p className={ CSS.appCardDesc }>{ app.description }</p>
+                </div>
+            </>
+        );
+
         return (
             <li key={ app.slug } className={ CSS.appCardItem }>
-                <Link to={ `/apps/${app.slug}/` } className={ CSS.appCardLink }>
-                    <div className={ CSS.appCardThumb } style={ thumbStyle }>
-                        { !app.thumbnailUrl && (
-                            <span className={ CSS.appCardThumbLabel }>{ app.name }</span>
-                        ) }
-                    </div>
-                    <div className={ CSS.appCardBody }>
-                        <h3 className={ CSS.appCardName }>{ app.name }</h3>
-                        <p className={ CSS.appCardDesc }>{ app.description }</p>
-                    </div>
-                </Link>
+                { app.external
+                    ? (
+                        <a
+                            href={ app.embedUrl }
+                            className={ CSS.appCardLink }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            { inner }
+                        </a>
+                    )
+                    : (
+                        <Link to={ `/apps/${app.slug}/` } className={ CSS.appCardLink }>
+                            { inner }
+                        </Link>
+                    )
+                }
                 { app.githubUrl && (
                     <a
                         href={ app.githubUrl }

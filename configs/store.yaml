@@ -199,6 +199,7 @@ apps:
     name: Hive
     description: "A two-player Hive board game — play hot-seat or online."
     embedUrl: https://hive-zmf.web.app
+    external: true
     githubUrl: https://github.com/ZackMFleischman/ai-experiments/tree/main/hive
     thumbnailGradient:
       - "#e0a300"
@@ -214,6 +215,7 @@ apps:
     name: Lex
     description: "A two-player crossword-tile word game — play hot-seat or online."
     embedUrl: https://lex-zmf.web.app
+    external: true
     githubUrl: https://github.com/ZackMFleischman/ai-experiments/tree/main/lex
     thumbnailGradient:
       - "#7b4a12"
