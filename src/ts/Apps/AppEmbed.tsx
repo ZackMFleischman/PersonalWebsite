@@ -1,5 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import IStoreModel, { IApp } from "../Redux/IModels";
 import { BackChip } from "./BackChip";
 import CSS from "@Sass/apps.scss";
@@ -25,7 +26,7 @@ export class AppEmbedComponent extends React.Component<IAppEmbedProps> {
             return (
                 <div className={ CSS.appEmbedRoot }>
                     <div className={ CSS.appsEmpty } style={ { padding: 48, color: "#f0ece4" } }>
-                        Unknown app “{ this.props.slug }”. <a href="/apps/" style={ { color: "#b68d4c" } }>Back to all apps</a>.
+                        Unknown app “{ this.props.slug }”. <Link to="/apps/" style={ { color: "#b68d4c" } }>Back to all apps</Link>.
                     </div>
                 </div>
             );
