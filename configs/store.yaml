@@ -195,6 +195,53 @@ apps:
       - art
       - drawing
 
+  - slug: hive
+    name: Hive
+    description: "A two-player Hive board game — play hot-seat or online."
+    embedUrl: https://hive-zmf.web.app
+    external: true
+    githubUrl: https://github.com/ZackMFleischman/ai-experiments/tree/main/hive
+    thumbnailGradient:
+      - "#e0a300"
+      - "#5a3d00"
+    tags:
+      - game
+      - board game
+      - strategy
+      - multiplayer
+      - pwa
+
+  - slug: lex
+    name: Lex
+    description: "A two-player crossword-tile word game — play hot-seat or online."
+    embedUrl: https://lex-zmf.web.app
+    external: true
+    githubUrl: https://github.com/ZackMFleischman/ai-experiments/tree/main/lex
+    thumbnailGradient:
+      - "#7b4a12"
+      - "#d9a441"
+    tags:
+      - game
+      - word game
+      - crossword
+      - multiplayer
+      - pwa
+
+  - slug: katmai-bears
+    name: Katmai Bearcams
+    description: "A live dashboard of the Katmai / Brooks Falls bear cams."
+    embedUrl: https://katmai-bears.pages.dev
+    githubUrl: https://github.com/ZackMFleischman/ai-experiments/tree/main/katmai-bears
+    thumbnailGradient:
+      - "#0b3d2e"
+      - "#0b1410"
+    tags:
+      - bears
+      - wildlife
+      - livestream
+      - dashboard
+      - pwa
+
 socialMedia:
   twitter: 
     id: twitter
