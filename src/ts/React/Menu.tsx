@@ -2,6 +2,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import IStoreModel, { ISection } from "../Redux/IModels";
+import Environment from "@Environment/Environment";
 import CSS from "@Sass/styles.scss";
 
 interface IMenuItem {
@@ -98,7 +99,11 @@ const mapStateToProps = (state: IStoreModel) => {
     const appsMenuItem = {
       id: "apps",
       title: "Apps",
-      url: "/apps/"
+      // Prefix the deploy base path so this plain-anchor nav lands on the
+      // apps route of the *current* deploy — "/apps/" in production, but
+      // "/pr-preview/pr-N/apps/" in a preview — instead of escaping to the
+      // domain-root production site.
+      url: Environment.getBasePath() + "/apps/"
     };
 
     const resumeMenuItem = {
